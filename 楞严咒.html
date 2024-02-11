@@ -3,137 +3,230 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+<link rel="stylesheet" href="main.css" type="text/css" />
+<script src="main.js"></script>
+
     <style type="text/css">
-	body{
-            background-color:white;
-			color:black;
-			font-size:24px;
-}
- 
-   .xin{
-   display:inline-display;-moz-transform:scale(1,2);transform:scale(1,2);-webkit-transform:scale(1,2);-o-transform:scale(1,2);font-size:13px;
-   }
- 
-        .buddyListOdd{
-            background-color:#f0f0f0;
-        }
-        .buddyListEven{
-            background-color:#ffffff;
-        }
-		.buddyListNormal{
-            background-color:white;
-			color:black;
-		}
-        .buddyListHighLight{
-            background-color:#DCE2E8;
-        }
-
-		#buddyListTable table{
-		font-family: "Microsoft YaHei", 微软雅黑;
-		text-align:center;
-		}
-		.zhuyin
-		{
-		    font-size:24px;
-			font-family: "宋体","Microsoft YaHei", 微软雅黑;
-		}
     </style>
+
     <SCRIPT LANGUAGE="JavaScript">
-        var currentLine=-1, offsetTr = 0;
-		var oBody = document.body;
-        var $=function(id){
-          return document.getElementById(id);
-        }
-        function keyDownEvent(e){
-            var e = window.event||e;
-            if(e.keyCode==38){
-                offsetTr = 0;
-                currentLine--;
-                changeItem();
-            }else if(e.keyCode==40){
-                offsetTr = 150;
-                currentLine++;
-                changeItem();
-            }else if(e.keyCode==13&&currentLine>-1){
-                addUser(); 
-            }
-            return false;
-        }
-        function changeItem(){
-            if(!$('buddyListTable')) return false;
-			
-			if(!oBody) oBody = document.body;
-
-            var it = $('buddyListTable');
-            if(document.all){
-                it = $('buddyListTable').children[0];
-            }
-            changeBackground();
-            if(currentLine<0) currentLine = it.rows.length-1;
-            if(currentLine >= it.rows.length) currentLine = 0;
-
-			//console.log(it.rows[currentLine].offsetTop+','+oBody.clientHeight+','+window.innerHeight+','+ document.documentElement.scrollTop);
- 
-			 //if(it.rows[currentLine].offsetTop < window.innerHeight/2 -1 )
-			 {
-				//
-				//if(document.documentElement.scrollTop > window.innerHeight){
-				    //document.documentElement.scrollTop =  (it.rows[currentLine].offsetTop) - window.innerHeight/2 -(-40) ;
-				//}
-				//console.log(document.documentElement.scrollTop);
-			 }//else //if(it.rows[currentLine].offsetTop < oBody.clientHeight - window.innerHeight/2)
-			{
-			  document.documentElement.scrollTop =  (it.rows[currentLine].offsetTop) - window.innerHeight/2 - (-70 );
-			}//else
-			{
-				
-			 }
-
-
-            it.rows[currentLine].className = "buddyListHighLight";
- 
-        }
-        function changeBackground(){
-            var it = $('buddyListTable');
-            if(document.all){
-                it = $('buddyListTable').children[0];
-            }
-            for(var i=0; i<it.rows.length; i++){
-                /*if(i%2==0){
-                    it.rows[i].className = "buddyListOdd";
-                }else{
-                    it.rows[i].className = "buddyListEven";
-                }*/
-				if(i != currentLine){
-				   it.rows[i].className = "buddyListNormal";
-				}else {
-					it.rows[i].className = "buddyListHighLight";
-				}
-            }//for
-        }
-
-        function addUser(){
-            //var it = $('buddyListTable');
-            if(document.all){
-                //it = $('buddyListTable').children[0];
-            }
-            //var trBody = it.rows[currentLine].innerHTML;
-            //$('result').innerHTML = $('result').innerHTML+trBody;
-        }
     </SCRIPT>
 </head>
 <body onkeyup="return keyDownEvent(event);">
-<table cellspacing="0" cellpadding="0" border="0" width="100%" id="buddyListTable"><tbody>
 
+<table cellspacing="0" cellpadding="0" border="0" width="100%" id="headerListTable"><tbody>
+ 
+    <tr>
+	<td align="center" valign="middle">
+		<table class="content" >
+			<tr class='zhuyin'>
+			<td>dà</td> <td>fó</td> <td>dǐng</td> <td>shǒu</td> <td>léng</td> <td>yán</td> <td>shén</td> <td>zhòu</td>
+			</tr>
+			<tr>
+			<td>大</td> <td>佛</td> <td>顶</td> <td>首</td> <td>楞</td> <td>严</td> <td>神</td> <td>咒</td>
+			</tr>
+		</table>
+	</td>
+   </tr>
+
+    <tr>
+	<td align="center" valign="middle">
+		<table class="content" >
+			<tr class='zhuyin'>
+<td>ná</td> <td>mó</td> <td>léng</td> <td>yán</td> <td>huì</td> <td>shàng</td> <td>fó</td> <td>pú</td> <td>sà</td> <td> </td>
+
+			</tr>
+			<tr>
+<td>南</td> <td>无</td> <td>楞</td> <td>严</td> <td>会</td> <td>上</td> <td>佛</td> <td>菩</td> <td>萨</td> <td>（三称） </td>
+			</tr>
+ 
+		</table>
+	</td>
+   </tr>
+
+
+   <tr>
+	<td align="center" valign="middle">
+		<table class="content" >
+			<tr class='zhuyin'>
+<td>miào</td> <td>zhàn</td> <td>zǒng</td> <td>chí</td> <td>bù</td> <td>dòng</td> <td>zūn</td> <td class="gap"></td> <td>shǒu</td> <td>léng</td> <td>yán</td> <td>wáng</td> <td>shì</td> <td>xī</td> <td>yǒu</td> 
+
+			</tr>
+			<tr>
+<td>妙</td> <td>湛</td> <td>总</td> <td>持</td> <td>不</td> <td>动</td> <td>尊</td> <td class="gap"></td> <td>首</td> <td>楞</td> <td>严</td> <td>王</td> <td>世</td> <td>希</td> <td>有</td> 			 
+			</tr>
+ 
 
  
+			<tr class='zhuyin'>
+<td>xiāo</td> <td>wǒ</td> <td>yì</td> <td>jié</td> <td>diān</td> <td>dǎo</td> <td>xiǎng</td> <td class="gap"></td> <td>bú</td> <td>lì</td> <td>sēng</td> <td>qí</td> <td>huò</td> <td>fǎ</td> <td>shēn</td> 
+
+			</tr>
+			<tr>
+<td>销</td> <td>我</td> <td>亿</td> <td>劫</td> <td>颠</td> <td>倒</td> <td>想</td> <td class="gap"></td> <td>不</td> <td>历</td> <td>僧</td> <td>祇</td> <td>获</td> <td>法</td> <td>身</td> 	 
+			</tr>
+ 
+   </tr>
+
+ 
+			<tr class='zhuyin'>
+<td>yuàn</td> <td>jīn</td> <td>dé</td> <td>guǒ</td> <td>chéng</td> <td>bǎo</td> <td>wáng</td> <td class="gap"></td> <td>huán</td> <td>dù</td> <td>rú</td> <td>shì</td> <td>héng</td> <td>shā</td> <td>zhòng</td>
+
+			</tr>
+			<tr>
+<td>愿</td> <td>今</td> <td>得</td> <td>果</td> <td>成</td> <td>宝</td> <td>王</td> <td class="gap"></td> <td>还</td> <td>度</td> <td>如</td> <td>是</td> <td>恒</td> <td>沙</td> <td>众</td> 
+			</tr>
+ 
+
+  
+			<tr class='zhuyin'>
+<td>jiāng</td> <td>cǐ</td> <td>shēn</td> <td>xīn</td> <td>fèng</td> <td>chén</td> <td>chà</td> <td class="gap"></td> <td>shì</td> <td>zé</td> <td>míng</td> <td>wéi</td> <td>bào</td> <td>fó</td> <td>ēn</td> 
+
+			</tr>
+			<tr>
+<td>将</td> <td>此</td> <td>深</td> <td>心</td> <td>奉</td> <td>尘</td> <td>刹</td> <td class="gap"></td> <td>是</td> <td>则</td> <td>名</td> <td>为</td> <td>报</td> <td>佛</td> <td>恩</td>  			 
+			</tr>
+ 
+   </tr>
+
+
+
+			<tr class='zhuyin'>
+<td>fú</td> <td>qǐng</td> <td>shì</td> <td>zūn</td> <td>wéi</td>   <td>zhèng</td> <td>míng</td> <td class="gap"></td>   <td>wǔ</td> <td>zhuó</td> <td>è</td> <td>shì</td> <td>shì</td> <td>xiān</td> <td>rù</td>
+
+			</tr>
+			<tr>
+<td>伏</td> <td>请</td> <td>世</td> <td>尊</td> <td>为</td> <td>证</td> <td>明</td>   <td class="gap"></td>  <td>五</td> <td>浊</td> <td>恶</td> <td>世</td> <td>誓</td> <td>先</td> <td>入</td>			 
+			</tr>
+
+
+			<tr class='zhuyin'><td>rú</td> <td>yī</td> <td>zhòng</td> <td>shēng</td> <td>wèi</td> <td>chéng</td> <td>fó</td>   <td class="gap"></td> <td>zhōng</td> <td>bù</td> <td>yú</td> <td>cǐ</td> <td>qǔ</td> <td>ní</td> <td>huán</td></tr>
+			<tr><td>如</td> <td>一</td> <td>众</td> <td>生</td> <td>未</td> <td>成</td> <td>佛</td>  <td class="gap"></td> <td>终</td> <td>不</td> <td>于</td> <td>此</td> <td>取</td> <td>泥</td> <td>洹</td></tr>
+
+			<tr class='zhuyin'><td>dà</td> <td>xióng</td> <td>dà</td> <td>lì</td> <td>dà</td> <td>cí</td> <td>bēi</td> <td class="gap"></td>  <td>xī</td> <td>gèng</td> <td>shěn</td> <td>chú</td> <td>wēi</td> <td>xì</td> <td>huò</td></tr>
+			<tr><td>大</td> <td>雄</td> <td>大</td> <td>力</td> <td>大</td> <td>慈</td> <td>悲</td> <td class="gap"></td>  <td>希</td> <td>更</td> <td>审</td> <td>除</td> <td>微</td> <td>细</td> <td>惑</td></tr>
+
+			<tr class='zhuyin'><td>lìng</td> <td>wǒ</td> <td>zǎo</td> <td>dēng</td> <td>wú</td> <td>shàng</td> <td>jué</td> <td class="gap"></td>   <td>yú</td> <td>shí</td> <td>fāng</td> <td>jiè</td> <td>zuò</td> <td>dào</td> <td>chǎng</td></tr>
+			<tr><td>令</td> <td>我</td> <td>早</td> <td>登</td> <td>无</td> <td>上</td> <td>觉</td> <td class="gap"></td>   <td>于</td> <td>十</td> <td>方</td> <td>界</td> <td>坐</td> <td>道</td> <td>场</td></tr>
+
+			<tr class='zhuyin'><td>shùn</td> <td>ruò</td> <td>duō</td> <td>xìng</td> <td>kě</td> <td>xiāo</td> <td>wáng</td>  <td class="gap"></td> <td>shuò</td> <td>jiā</td> <td>luó</td> <td>xīn</td> <td>wú</td> <td>dòng</td> <td>zhuǎn</td></tr>
+			<tr><td>舜</td> <td>若</td> <td>多</td> <td>性</td> <td>可</td> <td>销</td> <td>亡</td> <td class="gap"></td>  <td>烁</td> <td>迦</td> <td>罗</td> <td>心</td> <td>无</td> <td>动</td> <td>转</td></tr>
+
+			<tr class='zhuyin'></tr>
+			<tr></tr>
+
+			<tr class='zhuyin'></tr>
+			<tr></tr>
+
+			<tr class='zhuyin'></tr>
+			<tr></tr>
+
+			<tr class='zhuyin'></tr>
+			<tr></tr>
+
+			<tr class='zhuyin'></tr>
+			<tr></tr>
+
+			<tr class='zhuyin'></tr>
+			<tr></tr>
+
+			<tr class='zhuyin'></tr>
+			<tr></tr>
+ 
+		</table>
+	</td>
+   </tr>
+ 
+
+   <tr>
+	<td align="center" valign="middle">
+		<table class="content">
+			<tr class='zhuyin'><td>ná</td> <td>mó</td> <td>cháng</td> <td>zhù</td> <td>shí</td> <td>fāng</td> <td>fó</td> <td class="gap"></td>  <td>ná</td> <td>mó</td> <td>cháng</td> <td>zhù</td> <td>shí</td> <td>fāng</td> <td>fǎ</td></tr>
+			<tr><td>南</td> <td>无</td> <td>常</td> <td>住</td> <td>十</td> <td>方</td> <td>佛</td> <td class="gap"></td>  <td>南</td> <td>无</td> <td>常</td> <td>住</td> <td>十</td> <td>方</td> <td>法</td></tr>
+ 
+			<tr class='zhuyin'><td>ná</td> <td>mó</td> <td>cháng</td> <td>zhù</td> <td>shí</td> <td>fāng</td> <td>sēng</td> <td class="gap"></td>  <td>ná</td> <td>mó</td> <td>shì</td> <td>jiā</td> <td>móu</td> <td>ní</td> <td>fó</td></tr>
+			<tr><td>南</td> <td>无</td> <td>常</td> <td>住</td> <td>十</td> <td>方</td> <td>僧</td> <td class="gap"></td>  <td>南</td> <td>无</td> <td>释</td> <td>迦</td> <td>牟</td> <td>尼</td> <td>佛</td></tr>
+
+			<tr class='zhuyin'><td>ná</td> <td>mó</td> <td>fó</td> <td>dǐng</td> <td>shǒu</td> <td>léng</td> <td>yán</td> <td class="gap"></td>  <td>ná</td> <td>mó</td> <td>guān</td> <td>shì</td> <td>yīn</td> <td>pú</td> <td>sà</td></tr>
+			<tr><td>南</td> <td>无</td> <td>佛</td> <td>顶</td> <td>首</td> <td>楞</td> <td>严</td> <td class="gap"></td>  <td>南</td> <td>无</td> <td>观</td> <td>世</td> <td>音</td> <td>菩</td> <td>萨</td></tr>
+
+			<tr class='zhuyin'><td>ná</td> <td>mó</td> <td>jīn</td> <td>gāng</td> <td>zàng</td> <td>pú</td> <td>sà</td></tr>
+			<tr><td>南</td> <td>无</td> <td>金</td> <td>刚</td> <td>藏</td> <td>菩</td> <td>萨</td></tr>
+		</table>
+	</td>
+   </tr>
+
+    <tr>
+	<td align="left" valign="middle" >
+		<table  class="indtro_content">
+			<tr class='zhuyin'><td>ěr</td> <td>shí</td> <td>shì</td> <td>zūn</td> <td>，</td> <td>cóng</td> <td>ròu</td> <td>jì</td> <td>zhōng</td> <td>，</td>  <td>yǒng</td> <td>bǎi</td> <td>bǎo</td> <td>guāng</td>  <td>。</td>   <td>guāng</td> <td>zhōng</td> <td>yǒng</td> <td>chū</td>  <td>，</td> <td>qiān</td> <td>yè</td> <td>bǎo</td> <td>lián</td>  <td>。</td>  </tr>
+
+			<tr><td>尔</td> <td>时</td> <td>世</td> <td>尊</td> <td>，</td> <td>从</td> <td>肉</td> <td>髻</td> <td>中</td> <td>，</td> <td>涌</td> <td>百</td> <td>宝</td> <td>光</td> <td>。</td> <td>光</td> <td>中</td> <td>涌</td> <td>出</td> <td>，</td> <td>千</td> <td>叶</td> <td>宝</td> <td>莲</td> <td>。</td> </tr>
+		</table>
+	</td>
+   </tr>
+ 
+    <tr>
+	<td align="left" valign="middle" >
+		<table  class="indtro_content">
+			<tr class='zhuyin'> <td>yǒu</td> <td>huà</td> <td>rú</td> <td>lái</td> <td>，</td> <td>zuò</td> <td>bǎo</td> <td>huā</td> <td>zhōng</td> <td>，</td>  <td>dǐng</td> <td>fàng</td> <td>shí</td> <td>dào</td> <td>，</td> <td>bǎi</td> <td>bǎo</td> <td>guāng</td> <td>míng</td> <td>。</td> <td>yī</td> <td>yī</td> <td>guāng</td> <td>míng</td> <td>，</td> <td>jiē</td> <td>biàn</td> <td>shì</td> <td>xiàn</td> <td>。</td></tr>
+
+			<tr>  <td>有</td> <td>化</td> <td>如</td> <td>来</td> <td>，</td> <td>坐</td> <td>宝</td> <td>华</td> <td>中</td> <td>，</td> <td>顶</td> <td>放</td> <td>十</td> <td>道</td> <td>，</td> <td>百</td> <td>宝</td> <td>光</td> <td>明</td> <td>。</td> <td>一</td> <td>一</td> <td>光</td> <td>明</td> <td> ，</td> <td>皆</td> <td>遍</td> <td>示</td> <td>现</td> <td> 。</td></tr>
+		</table>
+	</td>
+   </tr>
+
+
+    <tr>
+	<td align="left" valign="middle">
+		<table class="indtro_content" >
+			<tr class='zhuyin'><td>shí</td> <td>héng</td> <td>hé</td> <td>shā</td> <td>，</td> <td>jīn</td> <td>gāng</td> <td>mì</td> <td>jì</td> <td>，</td> <td>qíng</td> <td>shān</td> <td>chí</td> <td>chǔ</td> <td>，</td> <td>biàn</td> <td>xū</td> <td>kōng</td> <td>jiè</td> <td>。</td></tr>
+			<tr><td>十</td> <td>恒</td> <td>河</td> <td>沙</td> <td>，</td> <td>金</td> <td>刚</td> <td>密</td> <td>迹</td> <td>，</td> <td>擎</td> <td>山</td> <td>持</td> <td>杵</td> <td> ，</td> <td>遍</td> <td>虚</td> <td>空</td> <td>界</td> <td>。</td></tr>
+		</table>
+	</td>
+   </tr>
+
+
+    <tr>
+	<td align="left" valign="middle">
+		<table class="indtro_content" >
+			<tr class='zhuyin'><td>dà</td> <td>zhòng</td> <td>yǎng</td> <td>guān</td> <td>，</td> <td>wèi</td> <td>ài</td> <td>jiān</td> <td>bào</td> <td> 。</td> <td>qiú</td> <td>fó</td> <td>āi</td> <td>yòu</td> <td>，</td> <td>yī</td> <td>xīn</td> <td>tīng</td> <td>fó</td> <td>，</td></tr>
+			<tr><td>大</td> <td>众</td> <td>仰</td> <td>观</td> <td>，</td> <td>畏</td> <td>爱</td> <td>兼</td> <td>抱</td> <td>。</td> <td>求</td> <td>佛</td> <td>哀</td> <td>祐</td> <td>，</td> <td>一</td> <td>心</td> <td>听</td> <td>佛</td> <td>，</td></tr>
+		</table>
+	</td>
+   </tr>
+
+
+    <tr>
+	<td align="left" valign="middle">
+		<table class="indtro_content" >
+			<tr class='zhuyin'><td>wú</td> <td>jiàn</td> <td>dǐng</td> <td>xiàng</td> <td>，</td> <td>fàng</td> <td>guāng</td> <td>rú</td> <td>lái</td> <td>，</td> <td>xuān</td> <td>shuō</td> <td>shén</td> <td>zhòu</td> <td>：</td></tr>
+			<tr><td>无</td> <td>见</td> <td>顶</td> <td>相</td> <td>，</td> <td>放</td> <td>光</td> <td>如</td> <td>来</td> <td>，</td> <td>宣</td> <td>说</td> <td>神</td> <td>咒</td> <td>：</td> </tr>
+		</table>
+	</td>
+   </tr>
+
+    <tr>
+	<td align="left" valign="middle">
+		<table class="indtro_content" >
+			<tr class='zhuyin'> </tr>
+			<tr></tr>
+		</table>
+	</td>
+   </tr>
+
+</tbody>
+</table>
+
+<table cellspacing="0" cellpadding="0" border="0" width="100%" id="buddyListTable"><tbody>
+
    <tr class="buddyListNormal">
-       <td width="26px"></td>
+       <td width="26px"  class="linenumber"></td>
        <td align="left" valign="middle">第一会  毗盧遮法会</td>
    </tr>
 
    <tr class="buddyListNormal" onkeyup="return keyDownEvent(event);">
-    <td width="26px">1</td>
+    <td width="26px" class="linenumber">1</td>
     <td align="left" valign="middle">
 	<table><tr class='zhuyin'><td>nā</td>
 	<td>mó</td><td>sà</td><td>dà</td><td>tuō</td><td>．</td><td>sū</td><td>qié</td><td>duō</td><td>yē</td><td>．</td><td>ā</td><td>là</td><td>hē</td><td>dì</td><td>．</td><td>sān</td><td>miǎo</td><td>sān</td><td>pú</td><td>tuó</td><td>xiě</td>
@@ -145,7 +238,7 @@
     </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">2</td>
+       <td width="26px" class="linenumber">2</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'>
 		 <td>nā</td> <td>mó</td> <td>sà</td> <td>dá</td> <td>tuō</td> <td>．</td> <td>fó</td> <td>tuó</td> <td>jù</td> <td>zhī</td> <td>sè</td> <td>ní</td> <td>shàn</td><tr>
@@ -155,7 +248,7 @@
 	   </td>
     </tr>
    <tr class="buddyListNormal">
-       <td width="26px">3</td>
+       <td width="26px" class="linenumber">3</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'>
 		 <td>nā</td> <td>mó</td> <td>sà</td> <td>pó</td><td>．</td><td>bó</td> <td>tuó</td> <td>bó</td> <td>dì</td> <td>．</td> <td>sà</td> <td>duò</td> <td>pí</td> <td>bì</td></tr>
@@ -165,7 +258,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">4</td>
+       <td width="26px" class="linenumber">4</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>nā</td> <td>mó</td> <td>sà</td> <td>duō</td> <td>nán</td> <td>．</td> <td>sān</td> <td>miǎo</td> <td>sān</td> <td>pú</td> <td>tuó</td> <td>．</td> <td>jù</td> <td>zhī</td> <td>nán</td><td>．</td><td>suō</td> <td>shě</td> <td>là</td> <td>pó</td> <td>jiā</td> <td>．</td> <td>sēng</td> <td>qié</td> <td>nán</td></tr>
 		 <tr><td>南</td> <td>无</td> <td>萨</td> <td>多</td> <td>南</td> <td>．</td> <td>三</td> <td>藐</td> <td>三</td> <td>菩</td> <td>陀</td> <td>．</td> <td>俱</td> <td>知</td> <td>喃</td><td>．</td><td>娑</td> <td>舍</td> <td>啰</td> <td>婆</td> <td>迦</td> <td>．</td> <td>僧</td> <td>伽</td> <td>喃</td></tr>
@@ -175,7 +268,7 @@
     </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">5</td>
+       <td width="26px" class="linenumber">5</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>nā</td> <td>mó</td> <td>lú</td> <td>jī</td> <td>ā</td> <td>luó</td> <td>hàn</td> <td>duò</td> <td>nán</td></tr>
 		 <tr><td>南</td> <td>无</td> <td>卢</td> <td>鸡</td> <td>阿</td> <td>罗</td> <td>汉</td> <td>哆</td> <td>喃</td></tr>
@@ -184,7 +277,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">6</td>
+       <td width="26px" class="linenumber">6</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>nā</td> <td>mó</td> <td>sū</td> <td>lú</td> <td>duō</td> <td>bō</td> <td>nuó</td> <td>nán</td></tr>
 		 <tr><td>南</td> <td>无</td> <td>苏</td> <td>卢</td> <td>多</td> <td>波</td> <td>那</td> <td>喃</td></tr>
@@ -193,7 +286,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">7</td>
+       <td width="26px" class="linenumber">7</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>nā</td> <td>mó</td> <td>suō</td> <td>jié</td> <td>lì</td> <td>tuó</td> <td>qié</td> <td>mí</td> <td>nán</td></tr>
 		 <tr><td>南</td> <td>无</td> <td>娑</td> <td>羯</td> <td>唎</td> <td>陀</td> <td>伽</td> <td>弥</td> <td>喃</td></tr>
@@ -202,7 +295,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">8</td>
+       <td width="26px" class="linenumber">8</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>nā</td> <td>mó</td> <td>lú</td> <td>jī</td> <td>sān</td> <td>miǎo</td> <td>qié</td> <td>duò</td> <td>nán</td> <td>．</td> <td>sān</td> <td>miǎo</td> <td>qié</td> <td>bō</td> <td>là</td> <td>．</td><td>dǐ</td> <td>bō</td> <td>duō</td> <td>nuó</td> <td>nán</td></tr>
 		 <tr><td>南</td> <td>无</td> <td>卢</td> <td>鸡</td> <td>三</td> <td>藐</td> <td>伽</td> <td>哆</td> <td>喃</td> <td>．</td> <td>三</td> <td>藐</td> <td>伽</td> <td>波</td> <td>啰</td>  <td>．</td> <td>底</td> <td>波</td> <td>多</td> <td>那</td> <td>喃</td></tr>
@@ -212,7 +305,7 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">9</td>
+       <td width="26px" class="linenumber">9</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>nā</td> <td>mó</td> <td>tí</td> <td>pó</td> <td>lí</td> <td>sè</td> <td>nǎn</td></tr>
 		 <tr><td>南</td> <td>无</td> <td>提</td> <td>婆</td> <td>离</td> <td>瑟</td> <td>赧</td></tr>
@@ -221,7 +314,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">10</td>
+       <td width="26px" class="linenumber">10</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>nā</td> <td>mó</td> <td>xī</td> <td>tuó</td> <td>yē</td> <td>．</td> <td>pí</td> <td>dì</td> <td>yē</td> <td>．</td> <td>tuó</td> <td>là</td> <td>lí</td> <td>sè</td> <td>nǎn</td> <td>．</td> <td>shě</td> <td>bō</td> <td>nú</td> <td>．</td><td>jiē</td> <td>là</td> <td>hē</td> <td>．</td><td>suō</td> <td>hē</td> <td>suō</td> <td>là</td> <td>mó</td> <td>tuō</td> <td>nán</td></tr>
 		 <tr><td>南</td> <td>无</td> <td>悉</td> <td>陀</td> <td>耶</td> <td>．</td> <td>毗</td> <td>地</td> <td>耶</td> <td>．</td> <td>陀</td> <td>啰</td> <td>离</td> <td>瑟</td> <td>赧</td> <td>．</td> <td>舍 </td><td>波</td> <td>奴</td> <td>．</td> <td>揭</td> <td>啰</td> <td>诃</td> <td>．</td> <td>娑</td> <td>诃</td> <td>娑</td> <td>啰</td> <td>摩</td> <td>他</td> <td>喃</td></tr>
@@ -231,7 +324,7 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">11</td>
+       <td width="26px" class="linenumber">11</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>nā</td> <td>mó</td> <td>bá</td> <td>là</td> <td>hē</td> <td>mó</td> <td>ní</td> <td>．</td> <td>nā</td> <td>mó</td> <td>yīn</td> <td>tuó</td> <td>là</td> <td>yē</td></tr>
 		 <tr><td>南</td> <td>无</td> <td>跋</td> <td>啰</td> <td>诃</td> <td>摩</td> <td>尼</td> <td>．</td> <td>南</td> <td>无</td> <td>因</td> <td>陀</td> <td>啰</td> <td>耶</td></tr>
@@ -241,7 +334,7 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">12</td>
+       <td width="26px" class="linenumber">12</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>nā</td> <td>mó</td> <td>pó</td> <td>qié</td> <td>pó</td> <td>dì</td> <td>．</td> <td>lú</td> <td>tuó</td> <td>là</td> <td>yē</td> <td>．</td> <td>wū</td> <td>mó</td> <td>bō</td> <td>dì</td> <td>．</td> <td>suō</td> <td>xī</td> <td>yè</td> <td>yē</td></tr>
 		 <tr><td>南</td> <td>无</td> <td>婆</td> <td>伽</td> <td>婆</td> <td>帝</td> <td>．</td> <td>嚧</td> <td>陀</td> <td>啰</td> <td>耶</td>  <td>．</td> <td>乌</td> <td>摩</td> <td>般</td> <td>帝</td> <td>．</td> <td>娑</td> <td>醯</td> <td>夜</td> <td>耶</td></tr>
@@ -250,7 +343,7 @@
    </tr> 
  
    <tr class="buddyListNormal">
-       <td width="26px">13</td>
+       <td width="26px" class="linenumber">13</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>nā</td> <td>mó</td> <td>pó</td> <td>qié</td> <td>pó</td> <td>dì</td> <td>．</td> <td>nuó</td> <td>là</td> <td>yě</td> <td>ná</td> <td>yē</td> <td>．</td> <td>pán</td> <td>zhē</td> <td>mó</td> <td>hē</td> <td>．</td>  <td>sān</td> <td>mù</td> <td>tuó</td> <td>là</td> <td>．</td> <td>nā</td> <td>mó</td> <td>xī</td> <td>jié</td> <td>lì</td> <td>duō</td> <td>yē</td></tr>
 		 <tr><td>南</td> <td>无</td> <td>婆</td> <td>伽</td> <td>婆</td> <td>帝</td> <td>．</td> <td>那</td> <td>啰</td> <td>野</td> <td>拏</td> <td>耶</td> <td>．</td> <td>槃</td> <td>遮</td> <td>摩</td> <td>诃</td> <td>．</td> <td>三</td> <td>慕</td> <td>陀</td> <td>啰</td> <td>．</td> <td>南</td> <td>无</td> <td>悉</td> <td>羯</td> <td>唎</td> <td>多</td> <td>耶</td></tr>
@@ -260,7 +353,7 @@
    </tr> 
  
    <tr class="buddyListNormal">
-       <td width="26px">14</td>
+       <td width="26px" class="linenumber">14</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>nā</td> <td>mó</td> <td>pó</td> <td>qié</td> <td>pó</td> <td>dì</td> <td>．</td> <td>mó</td> <td>hē</td> <td>jiā</td> <td>là</td> <td>yē</td> <td>．</td> <td>dì</td> <td>lì</td> <td>bō</td> <td>lá</td>  <td>．</td><td>nuó</td> <td>qié</td> <td>là</td> <td>pí</td> <td>tuó</td> <td>là</td> <td>．</td> <td>bō</td> <td>ná</td> <td>jiā</td> <td>là</td> <td>yē</td></tr>
 		 <tr><td>南</td> <td>无</td> <td>婆</td> <td>伽</td> <td>婆</td> <td>帝</td> <td>．</td> <td>摩</td> <td>诃</td> <td>迦</td> <td>啰</td> <td>耶</td> <td>．</td> <td>地</td> <td>唎</td> <td>般</td> <td>剌</td> <td>．</td> <td>那</td> <td>伽</td> <td>啰</td> <td>毗</td> <td>陀</td> <td>啰</td> <td>．</td> <td>波</td> <td>拏</td> <td>迦</td> <td>啰</td> <td>耶</td></tr>
@@ -271,7 +364,7 @@
  
  
    <tr class="buddyListNormal">
-       <td width="26px">15</td>
+       <td width="26px" class="linenumber">15</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>ā</td> <td>dì</td> <td>mù</td> <td>dì</td> <td>．</td> <td>shī</td> <td>mó</td> <td>shě</td> <td>nuó</td> <td>ní</td> <td>．</td> <td>pó</td> <td>xī</td> <td>ní</td>  <td>．</td> <td>mó</td> <td>dá</td> <td>lì</td> <td>qié</td> <td>ná</td></tr>
 		 <tr><td>阿</td> <td>地</td> <td>目</td> <td>帝</td> <td>．</td> <td>尸</td> <td>摩</td> <td>舍</td> <td>那</td> <td>泥</td> <td>．</td> <td>婆</td> <td>悉</td> <td>泥</td>  <td>．</td> <td>摩</td> <td>怛</td> <td>唎</td> <td>伽</td> <td>拏</td></tr>
@@ -281,7 +374,7 @@
    </tr> 
    
    <tr class="buddyListNormal">
-       <td width="26px">16</td>
+       <td width="26px" class="linenumber">16</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>nā</td> <td>mó</td> <td>xī</td> <td>jié</td> <td>lì</td> <td>duō</td> <td>yē</td> <td>．</td> <td>nā</td> <td>mó</td> <td>pó</td> <td>qié</td> <td>pó</td> <td>dì</td> <td>．</td> <td>duō</td> <td>tuō</td> <td>qié</td> <td>duò</td> <td>jù</td> <td>là</td> <td>yē</td></tr>
 		 <tr><td>南</td> <td>无</td> <td>悉</td> <td>羯</td> <td>唎</td> <td>多</td> <td>耶</td> <td>．</td> <td>南</td> <td>无</td> <td>婆</td> <td>伽</td> <td>婆</td> <td>帝</td> <td>．</td> <td>多</td> <td>他</td> <td>伽</td> <td>跢</td> <td>俱</td> <td>啰</td> <td>耶</td></tr>
@@ -291,7 +384,7 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">17</td>
+       <td width="26px" class="linenumber">17</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>nā</td> <td>mó</td> <td>bō</td> <td>tóu</td> <td>mó</td> <td>jù</td> <td>là</td> <td>yē</td></tr>
 		 <tr><td>南</td> <td>无</td> <td>般</td> <td>头</td> <td>摩</td>  <td>俱</td> <td>啰</td> <td>耶</td></tr>
@@ -300,7 +393,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">18</td>
+       <td width="26px" class="linenumber">18</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>nā</td> <td>mó</td> <td>bá</td> <td>shé</td> <td>là</td> <td>jù</td> <td>là</td> <td>yē</td></tr>
 		 <tr><td>南</td> <td>无</td> <td>跋</td> <td>阇</td> <td>啰</td> <td>俱</td> <td>啰</td> <td>耶</td></tr>
@@ -309,7 +402,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">19</td>
+       <td width="26px" class="linenumber">19</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>nā</td> <td>mó</td> <td>mó</td> <td>ní</td> <td>jù</td> <td>là</td> <td>yē</td></tr>
 		 <tr><td>南</td> <td>无</td> <td>摩</td> <td>尼</td> <td>俱</td> <td>啰</td> <td>耶</td></tr>
@@ -318,7 +411,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">20</td>
+       <td width="26px" class="linenumber">20</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>nā</td> <td>mó</td> <td>qié</td> <td>shé</td> <td>jù</td> <td>là</td> <td>yē</td></tr>
 		 <tr><td>南</td> <td>无</td> <td>伽</td> <td>阇</td> <td>俱</td> <td>啰</td> <td>耶</td></tr>
@@ -327,7 +420,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">21</td>
+       <td width="26px" class="linenumber">21</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>nā</td> <td>mó</td> <td>pó</td> <td>qié</td> <td>pó</td> <td>dì</td> <td>．</td> <td>dì</td> <td>lì</td> <td>chá</td> <td>．</td> <td>shū</td> <td>là</td> <td>xī</td> <td>nuó</td> <td>．</td> <td>bō</td> <td>là</td> <td>hē</td> <td>là</td> <td>ná</td> <td>là</td> <td>shé</td> <td>yē</td> <td>．</td> <td>duò</td> <td>tuō</td> <td>qié</td> <td>duō</td> <td>yē</td></tr>
 		 <tr><td>南</td> <td>无</td> <td>婆</td> <td>伽</td> <td>婆</td> <td>帝</td> <td>．</td> <td>帝</td> <td>唎</td> <td>茶</td> <td>．</td> <td>输</td> <td>啰</td> <td>西</td> <td>那</td> <td>．</td> <td>波</td> <td>啰</td> <td>诃</td> <td>啰</td> <td>拏</td> <td>啰</td> <td>阇</td> <td>耶</td> <td>．</td> <td>跢</td> <td>他</td> <td>伽</td> <td>多</td> <td>耶</td></tr>
@@ -338,7 +431,7 @@
  
  
    <tr class="buddyListNormal">
-       <td width="26px">22</td>
+       <td width="26px" class="linenumber">22</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>nā</td> <td>mó</td> <td>pó</td> <td>qié</td> <td>pó</td> <td>dì</td> <td>．</td> <td>nā</td> <td>mó</td> <td>ā</td> <td>mí</td> <td>duō</td> <td>pó</td> <td>yē</td> <td>．</td> <td>duò</td> <td>tuō</td> <td>qié</td> <td>duō</td> <td>yē</td> <td>．</td> <td>ā</td> <td>là</td> <td>hē</td> <td>dì</td> <td>．</td> <td>sān</td> <td>miǎo</td> <td>sān</td> <td>pú</td> <td>tuó</td> <td>yē</td></tr>
 		 <tr><td>南</td> <td>无</td> <td>婆</td> <td>伽</td> <td>婆</td> <td>帝</td> <td>．</td> <td>南</td> <td>无</td> <td>阿</td> <td>弥</td> <td>多</td> <td>婆</td> <td>耶</td>  <td>．</td> <td>跢</td> <td>他</td> <td>伽</td> <td>多</td> <td>耶</td> <td>．</td> <td>阿</td> <td>啰</td> <td>诃</td> <td>帝</td> <td>．</td> <td>三</td> <td>藐</td> <td>三</td> <td>菩</td> <td>陀</td> <td>耶</td></tr>
@@ -349,7 +442,7 @@
  
  
    <tr class="buddyListNormal">
-       <td width="26px">23</td>
+       <td width="26px" class="linenumber">23</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>nā</td> <td>mó</td> <td>pó</td> <td>qié</td> <td>pó</td> <td>dì</td> <td>．</td> <td>ā</td> <td>chú</td> <td>pí</td> <td>yē</td> <td>．</td> <td>duò</td> <td>tuō</td> <td>qié</td> <td>duō</td> <td>yē</td> <td>．</td> <td>ā</td> <td>là</td> <td>hē</td> <td>dì</td> <td>．</td> <td>sān</td> <td>miǎo</td> <td>sān</td> <td>pú</td> <td>tuó</td> <td>yē</td></tr>
 		 <tr><td>南</td> <td>无</td> <td>婆</td> <td>伽</td> <td>婆</td> <td>帝</td> <td>．</td> <td>阿</td> <td>芻</td> <td>鞞</td> <td>耶</td> <td>．</td> <td>跢</td> <td>他</td> <td>伽</td> <td>多</td> <td>耶</td> <td>．</td> <td>阿</td> <td>啰</td> <td>诃</td> <td>帝</td> <td>．</td> <td>三 <td>藐</td> <td>三</td> <td>菩</td> <td>陀</td> <td>耶</td></tr>
@@ -359,7 +452,7 @@
    </tr>
   
    <tr class="buddyListNormal">
-       <td width="26px">24</td>
+       <td width="26px" class="linenumber">24</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>nā</td> <td>mó</td> <td>pó</td> <td>qié</td> <td>pó</td> <td>dì</td> <td>．</td> <td>pí</td> <td>shā</td> <td>shé</td> <td>yē</td> <td>．</td> <td>jù</td> <td>lú</td> <td>fèi</td> <td>zhù</td> <td>lì</td> <td>yē</td> <td>．</td> <td>bō</td> <td>là</td> <td>pó</td> <td>là</td> <td>shé</td> <td>yē</td> <td>．</td> <td>duò</td> <td>tuō</td> <td>qié</td> <td>duō</td> <td>yē</td></tr>
 		 <tr><td>南</td> <td>无</td> <td>婆</td> <td>伽</td> <td>婆</td> <td>帝</td> <td>．</td> <td>鞞</td> <td>沙</td> <td>阇</td> <td>耶</td> <td>．</td> <td>俱</td> <td>卢</td> <td>吠</td> <td>柱</td> <td>唎</td> <td>耶</td> <td>．</td> <td>般</td> <td>啰</td> <td>婆</td> <td>啰</td> <td>阇</td> <td>耶</td> <td>．</td> <td>跢</td> <td>他</td> <td>伽</td> <td>多</td> <td>耶</td></tr>
@@ -369,7 +462,7 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">25</td>
+       <td width="26px" class="linenumber">25</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>nā</td> <td>mó</td> <td>pó</td> <td>qié</td> <td>pó</td> <td>dì</td> <td>．</td> <td>sān</td> <td>bǔ</td> <td>shī</td> <td>bì</td> <td>duō</td> <td>．</td> <td>sà</td> <td>lián</td> <td>nà</td> <td>là</td> <td>．</td> <td>là</td> <td>shé</td> <td>yē</td> <td>．</td> <td>duò</td> <td>tuō</td> <td>qié</td> <td>duō</td> <td>yē</td> <td>．</td> <td>ā</td> <td>là</td> <td>hē</td> <td>dì</td> <td>．</td> <td>sān</td> <td>miǎo</td> <td>sān</td> <td>pú</td> <td>tuó</td> <td>yē</td></tr>
 		 <tr><td>南</td> <td>无</td> <td>婆</td> <td>伽</td> <td>婆</td> <td>帝</td> <td>．</td> <td>三</td> <td>补</td> <td>师</td> <td>毖</td> <td>多</td> <td>．</td> <td>萨</td> <td>怜</td> <td>捺</td> <td>啰</td> <td>．</td> <td>剌</td> <td>阇</td> <td>耶</td> <td>．</td> <td>跢</td> <td>他</td> <td>伽</td> <td>多</td> <td>耶</td> <td>．</td> <td>阿</td> <td>啰</td> <td>诃</td> <td>帝</td> <td>．</td> <td>三</td> <td>藐</td> <td>三</td> <td>菩</td> <td>陀</td> <td>耶</td></tr>
@@ -379,7 +472,7 @@
    </tr> 
  
    <tr class="buddyListNormal">
-       <td width="26px">26</td>
+       <td width="26px" class="linenumber">26</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>nā</td> <td>mó</td> <td>pó</td> <td>qié</td> <td>pó</td> <td>dì</td> <td>．</td> <td>shě</td> <td>jī</td> <td>yě</td> <td>．</td> <td>mǔ</td> <td>nuó</td> <td>yè</td> <td>．</td> <td>duò</td> <td>tuō</td> <td>qié</td> <td>duō</td> <td>yē</td> <td>．</td> <td>ā</td> <td>là</td> <td>hē</td> <td>dì</td> <td>．</td> <td>sān</td> <td>miǎo</td> <td>sān</td> <td>pú</td> <td>tuó</td> <td>yē</td></tr>
 		 <tr><td>南</td> <td>无</td> <td>婆</td> <td>伽</td> <td>婆</td> <td>帝</td> <td>．</td> <td>舍</td> <td>鸡</td> <td>野</td> <td>．</td> <td>母</td> <td>那</td> <td>曳</td> <td>．</td> <td>跢</td> <td>他</td> <td>伽</td> <td>多</td> <td>耶</td> <td>．</td> <td>阿</td> <td>啰</td> <td>诃</td> <td>帝</td> <td>．</td> <td>三</td> <td>藐</td> <td>三</td> <td>菩</td> <td>陀</td> <td>耶</td></tr>
@@ -389,9 +482,9 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">27</td>
+       <td width="26px" class="linenumber">27</td>
        <td align="left" valign="middle">
-         <table><tr class='zhuyin'><td>nā</td> <td>mó</td> <td>pó</td> <td>qié</td> <td>pó</td> <td>dì</td> <td>．</td> <td>là <td>dá</td> <td>nà</td> <td>．</td> <td>jī</td> <td>dū</td> <td>là</td> <td>shé</td> <td>yē</td> <td>．</td> <td>duò</td> <td>tuō</td> <td>qié</td> <td>duō</td> <td>yē</td> <td>．</td> <td>ā</td> <td>là</td> <td>hē</td> <td>dì</td> <td>．</td> <td>sān</td> <td>miǎo</td> <td>sān</td> <td>pú</td> <td>tuó</td> <td>yē</td></tr>
+         <table><tr class='zhuyin'><td>nā</td> <td>mó</td> <td>pó</td> <td>qié</td> <td>pó</td> <td>dì</td> <td>．</td> <td>là <td>dá</td> <td>nuó</td> <td>．</td> <td>jī</td> <td>dū</td> <td>là</td> <td>shé</td> <td>yē</td> <td>．</td> <td>duò</td> <td>tuō</td> <td>qié</td> <td>duō</td> <td>yē</td> <td>．</td> <td>ā</td> <td>là</td> <td>hē</td> <td>dì</td> <td>．</td> <td>sān</td> <td>miǎo</td> <td>sān</td> <td>pú</td> <td>tuó</td> <td>yē</td></tr>
 		 <tr><td>南</td> <td>无</td> <td>婆</td> <td>伽</td> <td>婆</td> <td>帝</td> <td>．</td> <td>剌</td> <td>怛</td> <td>那</td> <td>．</td> <td>鸡</td> <td>都</td> <td>啰</td> <td>阇</td> <td>耶</td> <td>．</td> <td>跢</td> <td>他</td> <td>伽</td> <td>多</td> <td>耶</td> <td>．</td> <td>阿</td> <td>啰</td> <td>诃</td> <td>帝</td> <td>．</td> <td>三</td> <td>藐</td> <td>三</td> <td>菩</td> <td>陀</td> <td>耶</td></tr>
 		 
 		 </table>
@@ -399,7 +492,7 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">28</td>
+       <td width="26px" class="linenumber">28</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>dì</td> <td>piáo</td> <td>．</td> <td>nā</td> <td>mó</td> <td>sà</td> <td>jié</td> <td>lì</td> <td>duō</td> <td>．</td> <td>yì</td> <td>tán</td> <td>pó</td> <td>qié</td> <td>pó</td> <td>duō</td></tr>
 		 <tr><td>帝</td> <td>瓢</td> <td>．</td> <td>南</td> <td>无</td> <td>萨</td> <td>羯</td> <td>唎</td> <td>多</td> <td>．</td> <td>翳</td> <td>昙</td> <td>婆</td> <td>伽</td> <td>婆</td> <td>多</td></tr>
@@ -408,7 +501,7 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">29</td>
+       <td width="26px" class="linenumber">29</td>
 	   <td align="left" valign="middle">
 	     <table><tr class='zhuyin'><td>sà</td> <td>dàn</td> <td>tuō</td> <td>．</td> <td>qié</td> <td>dū</td> <td>sè</td> <td>ní</td> <td>shàn</td> <td>．</td> <td>sà</td> <td>dá</td> <td>duō</td> <td>．</td> <td>bō</td> <td>dá</td> <td>lán</td></tr>
 		 <tr><td>萨</td> <td>怛</td> <td>他</td> <td>．</td> <td>伽</td> <td>都</td> <td>瑟</td> <td>尼</td> <td>钐</td> <td>．</td> <td>萨</td> <td>怛</td> <td>多</td> <td>．</td> <td>般</td> <td>怛</td> <td>嚂</td></tr>
@@ -417,7 +510,7 @@
    </tr>
 
    <tr class="buddyListNormal">
-       <td width="26px">30</td>
+       <td width="26px" class="linenumber">30</td>
        <td align="left" valign="middle">
 	     <table><tr class='zhuyin'><td>nā</td><td>mō</td><td>ā</td><td>pó</td><td>là</td><td>shì</td><td>dān</td> <td>．</td> <td>bō</td> <td>là</td> <td>dì</td> <td>yáng</td> <td>qí</td> <td>là</td></tr>
 		 <tr><td>南</td><td>无</td><td>阿</td><td>婆</td><td>啰</td><td>视</td><td>耽</td> <td>．</td> <td>般</td> <td>啰</td> <td>帝</td> <td>扬</td> <td>歧</td> <td>啰</td></tr>
@@ -426,7 +519,7 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">31</td>
+       <td width="26px"  class="linenumber">31</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>sà</td> <td>là</td> <td>pó</td> <td>bù</td> <td>duō</td> <td>．</td> <td>jiē</td> <td>là</td> <td>hē</td> <td>．</td> <td>ní</td> <td>jiē</td> <td>là</td> <td>hē</td> <td>．</td> <td>jié</td> <td>jiā</td> <td>là</td> <td>hē</td> <td>ní</td></tr>
 		 <tr><td>萨</td> <td>啰</td> <td>婆</td> <td>部</td> <td>多</td> <td>．</td> <td>揭</td> <td>啰</td> <td>诃</td> <td>．</td> <td>尼</td> <td>揭</td> <td>啰</td> <td>诃</td> <td>．</td> <td>羯</td> <td>迦</td> <td>啰</td> <td>诃</td> <td>尼</td></tr>
@@ -436,7 +529,7 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">32</td>
+       <td width="26px"  class="linenumber">32</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>bá</td> <td>là</td> <td>sè</td> <td>dì</td> <td>yē</td> <td>．</td> <td>chì</td> <td>tuó</td> <td>nǐ</td> <td>．</td> <td>ā</td> <td>jiā</td> <td>là</td> <td>mì</td> <td>lì</td> <td>zhù</td> <td>．</td> <td>bō</td> <td>lì</td> <td>dá</td> <td>là</td> <td>yē</td> <td>．</td> <td>níng</td> <td>jiē</td> <td>lì</td></tr>
 		 <tr><td>跋</td> <td>啰</td> <td>瑟</td> <td>地</td> <td>耶</td> <td>．</td> <td>叱</td> <td>陀</td> <td>你</td> <td>．</td> <td>阿</td> <td>迦</td> <td>啰</td> <td>密</td> <td>唎</td> <td>柱</td> <td>．</td> <td>般</td> <td>唎</td> <td>怛</td> <td>啰</td> <td>耶</td> <td>．</td> <td>儜</td> <td>揭</td> <td>唎</td></tr>
@@ -445,7 +538,7 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">33</td>
+       <td width="26px"  class="linenumber">33</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>sà</td> <td>là</td> <td>pó</td> <td>．</td> <td>pán</td> <td>tuó</td> <td>nuó</td> <td>．</td> <td>mù</td> <td>chā</td> <td>ní</td></tr>
 		 <tr><td>萨</td> <td>啰</td> <td>婆</td> <td>．</td> <td>槃</td> <td>陀</td> <td>那</td> <td>．</td> <td>目</td> <td>叉</td> <td>尼</td></tr>
@@ -454,9 +547,9 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">34</td>
+       <td width="26px"  class="linenumber">34</td>
        <td align="left" valign="middle">
-         <table><tr class='zhuyin'><td>sà</td> <td>là</td> <td>pó</td> <td>．</td> <td>tū</td> <td>sè</td> <td>zhà</td> <td>．</td> <td>tū</td> <td>xī</td> <td>fá</td> <td>．</td> <td>bō</td> <td>nà</td> <td>nǐ</td> <td>fá</td> <td>là</td> <td>ní</td></tr>
+         <table><tr class='zhuyin'><td>sà</td> <td>là</td> <td>pó</td> <td>．</td> <td>tū</td> <td>sè</td> <td>zhà</td> <td>．</td> <td>tū</td> <td>xī</td> <td>fá</td> <td>．</td> <td>bō</td> <td>nuó</td> <td>nǐ</td> <td>fá</td> <td>là</td> <td>ní</td></tr>
 		 <tr><td>萨</td> <td>啰</td> <td>婆</td> <td>．</td> <td>突</td> <td>瑟</td> <td>吒</td> <td>．</td> <td>突</td> <td>悉</td> <td>乏</td> <td>．</td> <td>般</td> <td>那</td> <td>你</td> <td>伐</td> <td>啰</td> <td>尼</td></tr>
 		 
 		 </table>
@@ -464,9 +557,9 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">35</td>
+       <td width="26px"  class="linenumber">35</td>
        <td align="left" valign="middle">
-         <table><tr class='zhuyin'><td>zhě</td> <td>dū</td> <td>là</td> <td>shī</td> <td>dì</td> <td>nán</td> <td>．</td> <td>jié</td> <td>là</td> <td>hē</td> <td>．</td> <td>suō</td> <td>hē</td> <td>sà</td> <td>là</td> <td>ruò</td> <td>shé</td> <td>．</td> <td>pí</td> <td>duō</td> <td>bēng</td> <td>．</td> <td>suō</td> <td>nà</td> <td>jié</td> <td>lì</td></tr>
+         <table><tr class='zhuyin'><td>zhě</td> <td>dū</td> <td>là</td> <td>shī</td> <td>dì</td> <td>nán</td> <td>．</td> <td>jié</td> <td>là</td> <td>hē</td> <td>．</td> <td>suō</td> <td>hē</td> <td>sà</td> <td>là</td> <td>ruò</td> <td>shé</td> <td>．</td> <td>pí</td> <td>duō</td> <td>bēng</td> <td>．</td> <td>suō</td> <td>nuó</td> <td>jié</td> <td>lì</td></tr>
 		 <tr><td>赭</td> <td>都</td> <td>啰</td> <td>失</td> <td>帝</td> <td>南</td> <td>．</td> <td>羯</td> <td>啰</td> <td>诃</td> <td>．</td> <td>娑</td> <td>诃</td> <td>萨</td> <td>啰</td> <td>若</td> <td>阇</td> <td>．</td> <td>毗</td> <td>多</td> <td>崩</td> <td>．</td> <td>娑</td> <td>那</td> <td>羯</td> <td>唎</td></tr>
 		 
 		 </table>
@@ -474,9 +567,9 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">36</td>
+       <td width="26px"  class="linenumber">36</td>
        <td align="left" valign="middle">
-         <table><tr class='zhuyin'><td>ā</td> <td>sè</td> <td>zhà</td> <td>bīng</td> <td>shě</td> <td>dì</td> <td>nán</td> <td>．</td> <td>nà</td> <td>chā</td> <td>chà</td> <td>dàn</td> <td>là</td> <td>ruò</td> <td>shé</td> <td>．</td> <td>bō</td> <td>là</td> <td>sà</td> <td>tuó</td> <td>nà</td> <td>jié</td> <td>lì</td></tr>
+         <table><tr class='zhuyin'><td>ā</td> <td>sè</td> <td>zhà</td> <td>bīng</td> <td>shě</td> <td>dì</td> <td>nán</td> <td>．</td> <td>nuó</td> <td>chā</td> <td>chà</td> <td>dàn</td> <td>là</td> <td>ruò</td> <td>shé</td> <td>．</td> <td>bō</td> <td>là</td> <td>sà</td> <td>tuó</td> <td>nà</td> <td>jié</td> <td>lì</td></tr>
 		 <tr><td>阿</td> <td>瑟</td> <td>吒</td> <td>冰</td> <td>舍</td> <td>帝</td> <td>南</td> <td>．</td> <td>那</td> <td>叉</td> <td>刹</td> <td>怛</td> <td>啰</td> <td>若</td> <td>阇</td> <td>．</td> <td>波</td> <td>啰</td> <td>萨</td> <td>陀</td> <td>那</td> <td>羯</td> <td>唎</td></tr>
 		 
 		 </table>
@@ -484,9 +577,9 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">37</td>
+       <td width="26px"  class="linenumber">37</td>
        <td align="left" valign="middle">
-         <table><tr class='zhuyin'><td>ā</td> <td>sè</td> <td>zhà</td> <td>nán</td> <td>．</td> <td>mó</td> <td>hē</td> <td>jié</td> <td>là</td> <td>hē</td> <td>ruò</td> <td>shé</td> <td>．</td> <td>pí</td> <td>duō</td> <td>bēng</td> <td>．</td> <td>sà</td> <td>nà</td> <td>jié</td> <td>lì</td></tr>
+         <table><tr class='zhuyin'><td>ā</td> <td>sè</td> <td>zhà</td> <td>nán</td> <td>．</td> <td>mó</td> <td>hē</td> <td>jié</td> <td>là</td> <td>hē</td> <td>ruò</td> <td>shé</td> <td>．</td> <td>pí</td> <td>duō</td> <td>bēng</td> <td>．</td> <td>sà</td> <td>nuó</td> <td>jié</td> <td>lì</td></tr>
 		 <tr><td>阿</td> <td>瑟</td> <td>吒</td> <td>南</td> <td>．</td> <td>摩</td> <td>诃</td> <td>揭</td> <td>啰</td> <td>诃</td> <td>若</td> <td>阇</td> <td>．</td> <td>毗</td> <td>多</td> <td>崩</td> <td>．</td> <td>萨</td> <td>那</td> <td>羯</td> <td>唎</td></tr>
 		 
 		 </table>
@@ -494,7 +587,7 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">38</td>
+       <td width="26px"  class="linenumber">38</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>sà</td> <td>pó</td> <td>shě</td> <td>dū</td> <td>lú</td> <td>nǐ</td> <td>pó</td> <td>là</td> <td>ruò</td> <td>shé</td></tr>
 		 <tr><td>萨</td> <td>婆</td> <td>舍</td> <td>都</td> <td>嚧</td> <td>你</td> <td>婆</td> <td>啰</td> <td>若</td> <td>阇</td></tr>
@@ -503,16 +596,16 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">39</td>
+       <td width="26px"  class="linenumber">39</td>
        <td align="left" valign="middle">
-         <table><tr class='zhuyin'><td>hū</td> <td>lán</td> <td>tū</td> <td>xī</td> <td>fá</td> <td>．</td> <td>nán</td> <td>zhē</td> <td>nà</td> <td>shě</td> <td>ní</td></tr>
+         <table><tr class='zhuyin'><td>hū</td> <td>lán</td> <td>tū</td> <td>xī</td> <td>fá</td> <td>．</td> <td>nán</td> <td>zhē</td> <td>nuó</td> <td>shě</td> <td>ní</td></tr>
 		 <tr><td>呼</td> <td>蓝</td> <td>突</td> <td>悉</td> <td>乏</td> <td>．</td> <td>难</td> <td>遮</td> <td>那</td> <td>舍</td> <td>尼</td></tr>
 		 
 		 </table>
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">40</td>
+       <td width="26px"  class="linenumber">40</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>bì</td> <td>shā</td> <td>shě</td> <td>．</td> <td>xī</td> <td>dàn</td> <td>là</td> <td>．</td> <td>jí</td> <td>ní</td> <td>．</td> <td>wū</td> <td>tuó</td> <td>jiā</td> <td>là</td> <td>ruò</td> <td>shé</td></tr>
 		 <tr><td>毖</td> <td>沙</td> <td>舍</td> <td>．</td> <td>悉</td> <td>怛</td> <td>啰</td> <td>．</td> <td>阿</td> <td>吉</td> <td>尼</td> <td>．</td> <td>乌</td> <td>陀</td> <td>迦</td> <td>啰</td> <td>若</td> <td>阇</td></tr>
@@ -522,7 +615,7 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">41</td>
+       <td width="26px"  class="linenumber">41</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>ā</td> <td>bō</td> <td>là</td> <td>shì</td> <td>duō</td> <td>jū</td> <td>là</td></tr>
 		 <tr><td>阿</td> <td>般</td> <td>啰</td> <td>视</td> <td>多</td> <td>具</td> <td>啰</td></tr>
@@ -531,7 +624,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">42</td>
+       <td width="26px"  class="linenumber">42</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>mó</td> <td>hē</td> <td>bō</td> <td>là</td> <td>zhàn</td> <td>chí</td></tr>
 		 <tr><td>摩</td> <td>诃</td> <td>般</td> <td>啰</td> <td>战</td> <td>持</td></tr>
@@ -541,7 +634,7 @@
    </tr>
    
    <tr class="buddyListNormal">
-       <td width="26px">43</td>
+       <td width="26px"  class="linenumber">43</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>mó</td> <td>hē</td> <td>dié</td> <td>duō</td> <td>．</td> <td>mó</td> <td>hē</td> <td>dì</td> <td>shé</td></tr>
 		 <tr><td>摩</td> <td>诃</td> <td>叠</td> <td>多</td> <td>．</td> <td>摩</td> <td>诃</td> <td>帝</td> <td>阇</td></tr>
@@ -551,7 +644,7 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">44</td>
+       <td width="26px"  class="linenumber">44</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>mó</td> <td>hē</td> <td>shuì</td> <td>duō</td> <td>shé</td> <td>pó</td> <td>là</td></tr>
 		 <tr><td>摩</td> <td>诃</td> <td>税</td> <td>多</td> <td>阇</td> <td>婆</td> <td>啰</td></tr>
@@ -560,7 +653,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">45</td>
+       <td width="26px"  class="linenumber">45</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>mó</td> <td>hē</td> <td>bá</td> <td>là</td> <td>pán</td> <td>tuó</td> <td>là</td> <td>pó</td> <td>xī</td> <td>nǐ</td></tr>
 		 <tr><td>摩</td> <td>诃</td> <td>跋</td> <td>啰</td> <td>槃</td> <td>陀</td> <td>啰</td> <td>.</td> <td>婆</td> <td>悉</td> <td>你</td></tr>
@@ -569,7 +662,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">46</td>
+       <td width="26px"  class="linenumber">46</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>ā</td> <td>lì</td> <td>yē</td> <td>duō</td> <td>là</td> <td>．</td> <td>pí</td> <td>lì</td> <td>jù</td> <td>zhī</td></tr>
 		 <tr><td>阿</td> <td>唎</td> <td>耶</td> <td>多</td> <td>啰</td> <td>．</td> <td>毗</td> <td>唎</td> <td>俱</td> <td>知</td></tr>
@@ -579,7 +672,7 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">47</td>
+       <td width="26px"  class="linenumber">47</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>shì</td> <td>pó</td> <td>pí</td> <td>shé</td> <td>yē</td> <td>．</td> <td>bá</td> <td>shé</td> <td>là</td> <td>．</td> <td>mó</td> <td>lǐ</td> <td>dǐ</td> <td>．</td> <td>pí</td> <td>shě</td> <td>lú</td> <td>duō</td></tr>
 		 <tr><td>誓</td> <td>婆</td> <td>毗</td> <td>阇</td> <td>耶</td> <td>．</td> <td>跋</td> <td>阇</td> <td>啰</td> <td>．</td> <td>摩</td> <td>礼</td> <td>底</td> <td>．</td> <td>毗</td> <td>舍</td> <td>嚧</td> <td>多</td></tr>
@@ -589,7 +682,7 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">48</td>
+       <td width="26px"  class="linenumber">48</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>bó</td> <td>téng</td> <td>wǎng</td> <td>jiā</td> <td>．</td> <td>bá</td> <td>shé</td> <td>là</td> <td>．</td> <td>zhì</td> <td>hē</td> <td>nuó</td> <td>ē</td> <td>zhē</td></tr>
 		 <tr><td>勃</td> <td>腾</td> <td>罔</td> <td>迦</td> <td>．</td> <td>跋</td> <td>阇</td> <td>啰</td> <td>．</td> <td>制</td> <td>喝</td> <td>那</td> <td>阿</td> <td>遮</td></tr>
@@ -599,7 +692,7 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">49</td>
+       <td width="26px"  class="linenumber">49</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>mó</td> <td>là</td> <td>zhì</td> <td>pó</td> <td>．</td> <td>bō</td> <td>là</td> <td>zhì</td> <td>duō</td> <td>．</td> <td>bá</td> <td>shé</td> <td>là</td> <td>chàn</td> <td>chí</td> <td>．</td> <td>pí</td> <td>shě</td> <td>là</td> <td>zhē</td></tr>
 		 <tr><td>摩</td> <td>啰</td> <td>制</td> <td>婆</td> <td>．</td> <td>般</td> <td>啰</td> <td>质</td> <td>多</td> <td>．</td> <td>跋</td> <td>阇</td> <td>啰</td> <td>擅</td> <td>持</td> <td>．</td> <td>毗</td> <td>舍</td> <td>啰</td> <td>遮</td></tr>
@@ -609,7 +702,7 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">50</td>
+       <td width="26px"  class="linenumber">50</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>shàn <td>duō</td> <td>shě</td> <td>．</td> <td>pí</td> <td>tí</td> <td>pó</td> <td>．</td> <td>bǔ</td> <td>shì</td> <td>duō</td></tr>
 		 <tr><td>扇</td> <td>多</td> <td>舍</td> <td>．</td> <td>鞞</td> <td>提</td> <td>婆</td> <td>．</td> <td>补</td> <td>视</td> <td>多</td></tr>
@@ -618,7 +711,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">51</td>
+       <td width="26px"  class="linenumber">51</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>sū</td> <td>mó</td> <td>lú</td> <td>bō</td> <td>．</td> <td>mó</td> <td>hē</td> <td>shuì</td> <td>duō</td></tr>
 		 <tr><td>苏</td> <td>摩</td> <td>嚧</td> <td>波</td> <td>．</td> <td>摩</td> <td>诃</td> <td>税</td> <td>多</td></tr>
@@ -628,7 +721,7 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">52</td>
+       <td width="26px"  class="linenumber">52</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>ā</td> <td>lì</td> <td>yē</td> <td>duō</td> <td>là</td> <td>．</td> <td>mó</td> <td>hē</td> <td>pó</td> <td>là</td> <td>ā</td> <td>bō</td> <td>là</td> <td>．</td> <td>bá <td>shé <td>là <td>． <td>shāng <td>jié <td>là <td>zhì <td>pó</td></tr>
 		 <tr><td>阿</td> <td>唎</td> <td>耶</td> <td>多</td> <td>啰</td> <td>．</td> <td>摩 <td>诃 <td>婆 <td>啰 <td>阿 <td>般 <td>啰</td> <td>．</td> <td>跋 <td>阇 <td>啰 <td>． <td>商 <td>揭 <td>啰 <td>制 <td>婆</td></tr>
@@ -638,7 +731,7 @@
    </tr> 
    
    <tr class="buddyListNormal">
-       <td width="26px">53</td>
+       <td width="26px"  class="linenumber">53</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>bá</td> <td>shé</td> <td>là</td> <td>jù</td> <td>mó</td> <td>lì</td> <td>．</td> <td>jù</td> <td>lán</td> <td>tuó</td> <td>lì</td></tr>
 		 <tr><td>跋</td> <td>阇</td> <td>啰</td> <td>俱</td> <td>摩</td> <td>唎</td> <td>．</td> <td>俱</td> <td>蓝</td> <td>陀</td> <td>唎</td></tr>
@@ -648,7 +741,7 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">54</td>
+       <td width="26px"  class="linenumber">54</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>bá</td> <td>shé</td> <td>là</td> <td>．</td> <td>hē</td> <td>sà</td> <td>duō</td> <td>zhē</td> <td>．</td> <td>pí</td> <td>dì</td> <td>yē</td> <td>．</td> <td>qián</td> <td>zhē</td> <td>nuó</td> <td>．</td> <td>mó</td> <td>lì</td> <td>jiā</td></tr>
 		 <tr><td>跋</td> <td>阇</td> <td>啰</td> <td>．</td> <td>喝</td> <td>萨</td> <td>多</td> <td>遮</td> <td>．</td> <td>毗</td> <td>地</td> <td>耶</td> <td>．</td> <td>乾</td> <td>遮</td> <td>那</td> <td>．</td> <td>摩</td> <td>唎</td> <td>迦</td></tr>
@@ -658,9 +751,9 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">55</td>
+       <td width="26px"  class="linenumber">55</td>
        <td align="left" valign="middle">
-         <table><tr class='zhuyin'><td>kǔ</td> <td>sū</td> <td>mǔ</td> <td>．</td> <td>pó</td> <td>jié</td> <td>là</td> <td>duō</td> <td>nà</td> <td>．</td> <td>pí</td> <td>lú</td> <td>zhē</td> <td>nà</td> <td>jù</td> <td>lì</td> <td>yē</td> <td>．</td> <td>yè</td> <td>là</td> <td>tú</td> <td>sè</td> <td>ní</td> <td>shān</td></tr>
+         <table><tr class='zhuyin'><td>kǔ</td> <td>sū</td> <td>mǔ</td> <td>．</td> <td>pó</td> <td>jié</td> <td>là</td> <td>duō</td> <td>nuó</td> <td>．</td> <td>pí</td> <td>lú</td> <td>zhē</td> <td>nuó</td> <td>jù</td> <td>lì</td> <td>yē</td> <td>．</td> <td>yè</td> <td>là</td> <td>tú</td> <td>sè</td> <td>ní</td> <td>shān</td></tr>
 		 <tr><td>啒</td> <td>苏</td> <td>母</td> <td>．</td> <td>婆</td> <td>羯</td> <td>啰</td> <td>多</td> <td>那</td> <td>．</td> <td>鞞</td> <td>嚧</td> <td>遮</td> <td>那</td> <td>俱</td> <td>唎</td> <td>耶</td> <td>．</td> <td>夜</td> <td>啰</td> <td>菟</td> <td>瑟</td> <td>尼</td> <td>钐</td></tr>
 		 
 		 </table>
@@ -668,9 +761,9 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">56</td>
+       <td width="26px"  class="linenumber">56</td>
        <td align="left" valign="middle">
-         <table><tr class='zhuyin'><td>pí</td> <td>zhē</td> <td>lán</td> <td>．</td> <td>pó</td> <td>mó</td> <td>ní</td> <td>zhē</td> <td>．</td> <td>bá</td> <td>shé</td> <td>là</td> <td>．</td> <td>jiā</td> <td>nà</td> <td>jiā</td> <td>bō</td> <td>là</td> <td>pó</td></tr>
+         <table><tr class='zhuyin'><td>pí</td> <td>zhē</td> <td>lán</td> <td>．</td> <td>pó</td> <td>mó</td> <td>ní</td> <td>zhē</td> <td>．</td> <td>bá</td> <td>shé</td> <td>là</td> <td>．</td> <td>jiā</td> <td>nuó</td> <td>jiā</td> <td>bō</td> <td>là</td> <td>pó</td></tr>
 		 <tr><td>毗</td> <td>折</td> <td>蓝</td> <td>．</td> <td>婆</td> <td>摩</td> <td>尼</td> <td>遮</td> <td>．</td> <td>跋</td> <td>阇</td> <td>啰</td> <td>．</td> <td>迦</td> <td>那</td> <td>迦</td> <td>波</td> <td>啰</td> <td>婆</td></tr>
 		 
 		 </table>
@@ -678,7 +771,7 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">57</td>
+       <td width="26px"  class="linenumber">57</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>lú</td> <td>shé</td> <td>nà</td> <td>bá</td> <td>shé</td> <td>là</td> <td>．</td> <td>dùn</td> <td>zhì</td> <td>zhē</td> <td>．</td> <td>shuì</td> <td>duō</td> <td>zhē</td> <td>．</td> <td>jiā</td> <td>mó</td> <td>là</td> <td>．</td> <td>chà</td> <td>shē</td> <td>shī</td> <td>．</td> <td>bō</td> <td>là</td> <td>pó</td></tr>
 		 <tr><td>嚧</td> <td>阇</td> <td>那</td> <td>跋</td> <td>阇</td> <td>啰</td> <td>．</td> <td>顿</td> <td>稚</td> <td>遮</td> <td>．</td> <td>税</td> <td>多</td> <td>遮</td> <td>．</td> <td>迦</td> <td>摩</td> <td>啰</td> <td>．</td> <td>刹</td> <td>奢</td> <td>尸</td> <td>．</td> <td>波</td> <td>啰</td> <td>婆</td></tr>
@@ -688,9 +781,9 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">58</td>
+       <td width="26px"  class="linenumber">58</td>
        <td align="left" valign="middle">
-         <table><tr class='zhuyin'><td>yì</td> <td>dì</td> <td>yí</td> <td>dì</td> <td>．</td> <td>mǔ</td> <td>tuó</td> <td>là</td> <td>jié</td> <td>ná</td> <td>．</td> <td>suō</td> <td>pí</td> <td>là</td> <td>chàn</td> <td>．</td> <td>jué</td> <td>fàn</td> <td>dū</td> <td>．</td> <td>yìn</td> <td>tù</td> <td>nà</td> <td>．</td> <td>mó</td> <td>mó</td> <td>xiě</td></tr>
+         <table><tr class='zhuyin'><td>yì</td> <td>dì</td> <td>yí</td> <td>dì</td> <td>．</td> <td>mǔ</td> <td>tuó</td> <td>là</td> <td>jié</td> <td>ná</td> <td>．</td> <td>suō</td> <td>pí</td> <td>là</td> <td>chàn</td> <td>．</td> <td>jué</td> <td>fàn</td> <td>dū</td> <td>．</td> <td>yìn</td> <td>tù</td> <td>nuó</td> <td>．</td> <td>mó</td> <td>mó</td> <td>xiě</td></tr>
 		 <tr><td>翳</td> <td>帝</td> <td>夷</td> <td>帝</td> <td>．</td> <td>母</td> <td>陀</td> <td>啰</td> <td>羯</td> <td>拏</td> <td>．</td> <td>娑</td> <td>鞞</td> <td>啰</td> <td>忏</td> <td>．</td> <td>掘</td> <td>梵</td> <td>都</td> <td>．</td> <td>印</td> <td>兔</td> <td>那</td> <td>．</td> <td>么</td> <td>么</td> <td>写</td></tr>
 		 
 		 </table>
@@ -699,12 +792,12 @@
 
 
    <tr class="buddyListNormal">
-       <td width="26px"></td>
+       <td width="26px"  class="linenumber"></td>
        <td align="left" valign="middle">第二会  释尊应化会</td>
    </tr>
 
    <tr class="buddyListNormal">
-       <td width="26px">59</td>
+       <td width="26px"  class="linenumber">59</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>wū</td> <td>xīn</td> <td>．</td> <td>lì</td> <td>sè</td> <td>jiē</td> <td>ná</td> <td>．</td> <td>bō</td> <td>là</td> <td>shě</td> <td>xī</td> <td>duō</td> <td>．</td> <td>sà</td> <td>dá</td> <td>tuō</td> <td>．</td> <td>qié</td> <td>dū</td> <td>sè</td> <td>ní</td> <td>shān</td></tr>
 		 <tr><td>乌</td> <td class="xin">合牛</td> <td>．</td> <td>唎</td> <td>瑟</td> <td>揭</td> <td>拏</td> <td>．</td> <td>般</td> <td>剌</td> <td>舍</td> <td>悉</td> <td>多</td> <td>．</td> <td>萨</td> <td>怛</td> <td>他</td> <td>．</td> <td>伽</td> <td>都</td> <td>瑟</td> <td>尼</td> <td>钐</td></tr>
@@ -714,7 +807,7 @@
    </tr>
   
    <tr class="buddyListNormal">
-       <td width="26px">60</td>
+       <td width="26px"  class="linenumber">60</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>hǔ</td> <td>xīn</td> <td>．</td> <td>dū</td> <td>lú</td> <td>yōng</td> <td>．</td> <td>zhān</td> <td>pó</td> <td>nuó</td></tr>
 		 <tr><td>虎</td> <td class="xin">合牛</td> <td>．</td> <td>都</td> <td>卢</td> <td>雍</td> <td>．</td> <td>瞻</td> <td>婆</td> <td>那</td></tr>
@@ -724,7 +817,7 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">61</td>
+       <td width="26px"  class="linenumber">61</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>hǔ</td> <td>xīn</td> <td>．</td> <td>dū</td> <td>lú</td> <td>yōng</td> <td>．</td> <td>xī <td>dān</td> <td>pó</td> <td>nuó</td></tr>
 		 <tr><td>虎</td> <td class="xin">合牛</td> <td>．</td> <td>都</td> <td>卢</td> <td>雍</td> <td>．</td> <td>悉</td> <td>耽</td> <td>婆</td> <td>那</td></tr>
@@ -734,7 +827,7 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">62</td>
+       <td width="26px"  class="linenumber">62</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>hǔ</td> <td>xīn</td> <td>．</td> <td>dū</td> <td>lú</td> <td>yōng</td> <td>．</td> <td>bō</td> <td>là</td> <td>sè</td> <td>dì</td> <td>yē</td> <td>．</td> <td>sān</td> <td>bō</td> <td>chā</td> <td>．</td> <td>ná</td> <td>jié</td> <td>là</td></tr>
 		 <tr><td>虎</td> <td class="xin">合牛</td> <td>．</td> <td>都</td> <td>卢</td> <td>雍</td> <td>．</td> <td>波</td> <td>啰</td> <td>瑟</td> <td>地</td> <td>耶</td> <td>．</td> <td>三</td> <td>般</td> <td>叉</td> <td>．</td> <td>拏</td> <td>羯</td> <td>啰</td></tr>
@@ -744,7 +837,7 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">63</td>
+       <td width="26px"  class="linenumber">63</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>hǔ</td> <td>xīn</td> <td>．</td> <td>dū</td> <td>lú</td> <td>yōng</td> <td>．</td> <td>sà</td> <td>pó</td> <td>yào</td> <td>chā</td> <td>．</td> <td>hē</td> <td>là</td> <td>chà</td> <td>suō</td>  <td>．</td> <td>jiē</td> <td>là</td> <td>hē</td> <td>ruò</td> <td>shé</td> <td>．</td> <td>pí</td> <td>téng</td> <td>bēng</td> <td>．</td> <td>sà</td> <td>nuó</td> <td>jié</td> <td>là</td></tr>
 		 <tr><td>虎</td> <td class="xin">合牛</td> <td>．</td> <td>都</td> <td>卢</td> <td>雍</td> <td>．</td> <td>萨</td> <td>婆</td> <td>药</td> <td>叉</td> <td>．</td> <td>喝</td> <td>啰</td> <td>刹</td> <td>娑</td> <td>．</td> <td>揭</td> <td>啰</td> <td>诃</td> <td>若</td> <td>阇</td> <td>．</td> <td>毗</td> <td>腾</td> <td>崩</td> <td>．</td> <td>萨</td> <td>那</td> <td>羯</td> <td>啰</td></tr>
@@ -754,7 +847,7 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">64</td>
+       <td width="26px"  class="linenumber">64</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>hǔ</td> <td>xīn</td> <td>．</td> <td>dū</td> <td>lú</td> <td>yōng</td> <td>．</td> <td>zhě</td> <td>dū</td> <td>là</td> <td>．</td> <td>shī</td> <td>dǐ</td> <td>nán</td> <td>．</td> <td>jiē</td> <td>là</td> <td>hē</td> <td>．</td> <td>suō</td> <td>hē</td> <td>sà</td> <td>là</td> <td>nán</td> <td>．</td> <td>pí</td> <td>téng</td> <td>bēng</td> <td>．</td> <td>sà</td> <td>nuó</td> <td>là</td></tr>
 		 <tr><td>虎</td> <td class="xin">合牛</td> <td>．</td> <td>都</td> <td>卢</td> <td>雍</td> <td>．</td> <td>者</td> <td>都</td> <td>啰</td> <td>．</td> <td>尸</td> <td>底</td> <td>南</td> <td>．</td> <td>揭</td> <td>啰</td> <td>诃</td> <td>．</td> <td>娑</td> <td>诃</td> <td>萨</td> <td>啰</td> <td>南</td> <td>．</td> <td>毗</td> <td>腾</td> <td>崩</td> <td>．</td> <td>萨</td> <td>那</td> <td>啰</td></tr>
@@ -764,7 +857,7 @@
    </tr>
   
    <tr class="buddyListNormal">
-       <td width="26px">65</td>
+       <td width="26px"  class="linenumber">65</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>hǔ</td> <td>xīn</td> <td>．</td> <td>dū</td> <td>lú</td> <td>yōng</td> <td>．</td> <td>là</td> <td>chā</td> <td>．</td> <td>pó</td> <td>qié</td> <td>fàn</td></tr>
 		 <tr><td>虎</td> <td class="xin">合牛</td> <td>．</td> <td>都</td> <td>卢</td> <td>雍</td> <td>．</td> <td>啰</td> <td>叉</td> <td>．</td> <td>婆</td> <td>伽</td> <td>梵</td></tr>
@@ -774,7 +867,7 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">66</td>
+       <td width="26px"  class="linenumber">66</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>sà</td> <td>dá</td> <td>tuō</td> <td>．</td> <td>qié</td> <td>dū</td> <td>sè</td> <td>ní</td> <td>shān</td></tr>
 		 <tr><td>萨</td> <td>怛</td> <td>他</td> <td>．</td> <td>伽</td> <td>都</td> <td>瑟</td> <td>尼</td> <td>钐</td></tr>
@@ -783,7 +876,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">67</td>
+       <td width="26px"  class="linenumber">67</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>bō</td> <td>là</td> <td>diǎn</td> <td>shé</td> <td>jí</td> <td>lì</td></tr>
 		 <tr><td>波</td> <td>啰</td> <td>点</td> <td>阇</td> <td>吉</td> <td>唎</td></tr>
@@ -792,7 +885,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">68</td>
+       <td width="26px"  class="linenumber">68</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>mó</td> <td>hē</td> <td>suō</td> <td>hē</td> <td>sà</td> <td>là</td></tr>
 		 <tr><td>摩</td> <td>诃</td> <td>娑</td> <td>诃</td> <td>萨</td> <td>啰</td></tr>
@@ -801,7 +894,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">69</td>
+       <td width="26px"  class="linenumber">69</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>bó</td> <td>shù</td> <td>suō</td> <td>hē</td> <td>sà</td> <td>là</td> <td>．</td> <td>shì</td> <td>lì</td> <td>shā</td></tr>
 		 <tr><td>勃</td> <td>树</td> <td>娑</td> <td>诃</td> <td>萨</td> <td>啰</td> <td>．</td> <td>室</td> <td>唎</td> <td>沙</td></tr>
@@ -810,7 +903,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">70</td>
+       <td width="26px"  class="linenumber">70</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>jù</td> <td>zhī</td> <td>suō</td> <td>hē</td> <td>sà</td> <td>ní</td> <td>dì</td> <td>lì</td></tr>
 		 <tr><td>俱</td> <td>知</td> <td>娑</td> <td>诃</td> <td>萨</td> <td>泥</td> <td>帝</td> <td class="xin">口隸</td></tr>
@@ -819,7 +912,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">71</td>
+       <td width="26px"  class="linenumber">71</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>ā</td> <td>bì</td> <td>tí</td> <td>shì</td> <td>pó</td> <td>lì</td> <td>duō</td></tr>
 		 <tr><td>阿</td> <td>弊</td> <td>提</td> <td>视</td> <td>婆</td> <td>唎</td> <td>多</td></tr>
@@ -830,7 +923,7 @@
 
    
    <tr class="buddyListNormal">
-       <td width="26px">72</td>
+       <td width="26px"  class="linenumber">72</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>zhà</td> <td>zhà</td> <td>yīng</td> <td>jiā</td></tr>
 		 <tr><td>吒</td> <td>吒</td> <td>罂</td> <td>迦</td></tr>
@@ -839,7 +932,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">73</td>
+       <td width="26px"  class="linenumber">73</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>mó</td> <td>hē</td> <td>bá</td> <td>shé</td> <td>lú</td> <td>tuó</td> <td>là</td></tr>
 		 <tr><td>摩</td> <td>诃</td> <td>跋</td> <td>阇</td> <td>嚧</td> <td>陀</td> <td>啰</td></tr>
@@ -848,7 +941,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">74</td>
+       <td width="26px"  class="linenumber">74</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>dì</td> <td>lì</td> <td>pú</td> <td>pó</td> <td>nuó</td></tr>
 		 <tr><td>帝</td> <td>唎</td> <td>菩</td> <td>婆</td> <td>那</td></tr>
@@ -857,7 +950,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">75</td>
+       <td width="26px"  class="linenumber">75</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>màn</td> <td>chá</td> <td>là</td></tr>
 		 <tr><td>曼</td> <td>茶</td> <td>啰</td></tr>
@@ -866,7 +959,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">76</td>
+       <td width="26px"  class="linenumber">76</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>wū</td> <td>xīn</td></tr>
 		 <tr><td>乌</td> <td class="xin">合牛</td></tr>
@@ -875,7 +968,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">77</td>
+       <td width="26px"  class="linenumber">77</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>suō</td> <td>xī</td> <td>dì</td> <td>bù</td> <td>pó</td> <td>dū</td></tr>
 		 <tr><td>娑</td> <td>悉</td> <td>帝</td> <td>薄</td> <td>婆</td> <td>都</td></tr>
@@ -884,7 +977,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">78</td>
+       <td width="26px"  class="linenumber">78</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>mó</td> <td>mó</td></tr>
 		 <tr><td>么</td> <td>么</td></tr>
@@ -893,7 +986,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">79</td>
+       <td width="26px"  class="linenumber">79</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>yìn</td> <td>tù</td> <td>nuó</td> <td>mó</td> <td>mó</td> <td>xiě</td></tr>
 		 <tr><td>印</td> <td>兔</td> <td>那</td> <td>么</td> <td>么</td> <td>写</td></tr>
@@ -903,12 +996,12 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px"></td>
+       <td width="26px"  class="linenumber"></td>
        <td align="left" valign="middle">第三会  观音合同会</td>
    </tr>
 
    <tr class="buddyListNormal">
-       <td width="26px">80</td>
+       <td width="26px"  class="linenumber">80</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>là</td> <td>shé</td> <td>pó</td> <td>yè</td></tr>
 		 <tr><td>啰</td> <td>阇</td> <td>婆</td> <td>夜</td></tr>
@@ -917,7 +1010,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">81</td>
+       <td width="26px"  class="linenumber">81</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>zhǔ</td> <td>là</td> <td>bá</td> <td>yè</td></tr>
 		 <tr><td>主</td> <td>啰</td> <td>跋</td> <td>夜</td></tr>
@@ -927,7 +1020,7 @@
    </tr>
    
    <tr class="buddyListNormal">
-       <td width="26px">82</td>
+       <td width="26px"  class="linenumber">82</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>ā</td> <td>qí</td> <td>ní</td> <td>pó</td> <td>yè</td></tr>
 		 <tr><td>阿</td> <td>祇</td> <td>尼</td> <td>婆</td> <td>夜</td></tr>
@@ -936,7 +1029,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">83</td>
+       <td width="26px"  class="linenumber">83</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>wū</td> <td>tuó</td> <td>jiā</td> <td>pó</td> <td>yè</td></tr>
 		 <tr><td>乌</td> <td>陀</td> <td>迦</td> <td>婆</td> <td>夜</td></tr>
@@ -945,7 +1038,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">84</td>
+       <td width="26px"  class="linenumber">84</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>pí</td> <td>shā</td> <td>pó</td> <td>yè</td></tr>
 		 <tr><td>毗</td> <td>沙</td> <td>婆</td> <td>夜</td></tr>
@@ -954,7 +1047,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">85</td>
+       <td width="26px"  class="linenumber">85</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>shě</td> <td>sà</td> <td>duō</td> <td>là</td> <td>pó</td> <td>yè</td></tr>
 		 <tr><td>舍</td> <td>萨</td> <td>多</td> <td>啰</td> <td>婆</td> <td>夜</td></tr>
@@ -963,7 +1056,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">86</td>
+       <td width="26px"  class="linenumber">86</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>pó</td> <td>là</td> <td>zhuó</td> <td>jié</td> <td>là</td> <td>pó</td> <td>yè</td></tr>
 		 <tr><td>婆</td> <td>啰</td> <td>斫</td> <td>羯</td> <td>啰</td> <td>婆</td> <td>夜</td></tr>
@@ -972,7 +1065,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">87</td>
+       <td width="26px"  class="linenumber">87</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>tū</td> <td>sè</td> <td>chā</td> <td>pó</td> <td>yè</td></tr>
 		 <tr><td>突</td> <td>瑟</td> <td>叉</td> <td>婆</td> <td>夜</td></tr>
@@ -981,7 +1074,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">88</td>
+       <td width="26px"  class="linenumber">88</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>ā</td> <td>shě</td> <td>nǐ</td> <td>pó</td> <td>yè</td></tr>
 		 <tr><td>阿</td> <td>舍</td> <td>你</td> <td>婆</td> <td>夜</td></tr>
@@ -990,7 +1083,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">89</td>
+       <td width="26px"  class="linenumber">89</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>ā</td> <td>jiā</td> <td>là</td> <td>．</td> <td>mì</td> <td>lì</td> <td>zhù</td> <td>pó</td> <td>yè</td></tr>
 		 <tr><td>阿</td> <td>迦</td> <td>啰</td> <td>．</td> <td>密</td> <td>唎</td> <td>柱</td> <td>婆</td> <td>夜</td></tr>
@@ -999,7 +1092,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">90</td>
+       <td width="26px"  class="linenumber">90</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>tuó</td> <td>luó</td> <td>ní</td> <td>bù</td> <td>mí</td> <td>jiàn</td> <td>．</td> <td>bō</td> <td>qié</td> <td>bō</td> <td>tuó</td> <td>pó</td> <td>yè</td></tr>
 		 <tr><td>陀</td> <td>啰</td> <td>尼</td> <td>部</td> <td>弥</td> <td>剑</td> <td>．</td> <td>波</td> <td>伽</td> <td>波</td> <td>陀</td> <td>婆</td> <td>夜</td></tr>
@@ -1008,7 +1101,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">91</td>
+       <td width="26px"  class="linenumber">91</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>wū</td> <td>là</td> <td>jiā</td> <td>pó</td> <td>duō</td> <td>pó</td> <td>yè</td></tr>
 		 <tr><td>乌</td> <td>啰</td> <td>迦</td> <td>婆</td> <td>多</td> <td>婆</td> <td>夜</td></tr>
@@ -1019,7 +1112,7 @@
 
    
    <tr class="buddyListNormal">
-       <td width="26px">92</td>
+       <td width="26px"  class="linenumber">92</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>là</td> <td>shé</td> <td>tán</td> <td>chá</td> <td>pó</td> <td>yè</td></tr>
 		 <tr><td>剌</td> <td>阇</td> <td>坛</td> <td>茶</td> <td>婆</td> <td>夜</td></tr>
@@ -1028,7 +1121,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">93</td>
+       <td width="26px"  class="linenumber">93</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>nuó</td> <td>qié</td> <td>pó</td> <td>yè</td></tr>
 		 <tr><td>那</td> <td>伽</td> <td>婆</td> <td>夜</td></tr>
@@ -1037,7 +1130,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">94</td>
+       <td width="26px"  class="linenumber">94</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>pí</td> <td>tiáo</td> <td>dá</td> <td>pó</td> <td>yè</td></tr>
 		 <tr><td>毗</td> <td>条</td> <td>怛</td> <td>婆</td> <td>夜</td></tr>
@@ -1046,7 +1139,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">95</td>
+       <td width="26px"  class="linenumber">95</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>sū</td> <td>bō</td> <td>là</td> <td>ná</td> <td>pó</td> <td>yè</td></tr>
 		 <tr><td>苏</td> <td>波</td> <td>啰</td> <td>拏</td> <td>婆</td> <td>夜</td></tr>
@@ -1055,7 +1148,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">96</td>
+       <td width="26px"  class="linenumber">96</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>yào</td> <td>chā</td> <td>jiē</td> <td>là</td> <td>hē</td></tr>
 		 <tr><td>药</td> <td>叉</td> <td>揭</td> <td>啰</td> <td>诃</td></tr>
@@ -1064,7 +1157,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">97</td>
+       <td width="26px"  class="linenumber">97</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>là</td> <td>chā</td> <td>sī</td> <td>．</td> <td>jiē</td> <td>là</td> <td>hē</td></tr>
 		 <tr><td>啰</td> <td>叉</td> <td>私</td> <td>．</td> <td>揭</td> <td>啰</td> <td>诃</td></tr>
@@ -1073,7 +1166,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">98</td>
+       <td width="26px"  class="linenumber">98</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>bì</td> <td>lì</td> <td>duō</td> <td>．</td> <td>jiē</td> <td>là</td> <td>hē</td></tr>
 		 <tr><td>毕</td> <td>唎</td> <td>多</td> <td>．</td> <td>揭</td> <td>啰</td> <td>诃</td></tr>
@@ -1082,7 +1175,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">99</td>
+       <td width="26px"  class="linenumber">99</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>pí</td> <td>shě</td> <td>zhē</td> <td>．</td> <td>jiē</td> <td>là</td> <td>hē</td></tr>
 		 <tr><td>毗</td> <td>舍</td> <td>遮</td> <td>．</td> <td>揭</td> <td>啰</td> <td>诃</td></tr>
@@ -1091,7 +1184,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">100</td>
+       <td width="26px"  class="linenumber">100</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>bù</td> <td>duō</td> <td>jiē</td> <td>là</td> <td>hē</td></tr>
 		 <tr><td>部</td> <td>多</td> <td>揭</td> <td>啰</td> <td>诃</td></tr>
@@ -1100,7 +1193,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">101</td>
+       <td width="26px"  class="linenumber">101</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>jiū</td> <td>pán</td> <td>cha</td> <td>．</td> <td>jiē</td> <td>là</td> <td>hē</td></tr>
 		 <tr><td>鸠</td> <td>槃</td> <td>茶</td> <td>．</td> <td>揭</td> <td>啰</td> <td>诃</td></tr>
@@ -1110,7 +1203,7 @@
    </tr>
    
    <tr class="buddyListNormal">
-       <td width="26px">102</td>
+       <td width="26px"  class="linenumber">102</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>bǔ</td> <td>dān</td> <td>nuó</td> <td>．</td> <td>jiē</td> <td>là</td> <td>hē</td></tr>
 		 <tr><td>补</td> <td>单</td> <td>那</td> <td>．</td> <td>揭</td> <td>啰</td> <td>诃</td></tr>
@@ -1119,7 +1212,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">103</td>
+       <td width="26px"  class="linenumber">103</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>jiā</td> <td>zhà</td> <td>bǔ</td> <td>dān</td> <td>nuó</td> <td>．</td> <td>jiē</td> <td>là</td> <td>hē</td></tr>
 		 <tr><td>迦</td> <td>吒</td> <td>补</td> <td>单</td> <td>那</td> <td>．</td> <td>揭</td> <td>啰</td> <td>诃</td></tr>
@@ -1128,7 +1221,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">104</td>
+       <td width="26px"  class="linenumber">104</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>xī</td> <td>qián</td> <td>dùv <td>．</td> <td>jiē</td> <td>là</td> <td>hē</td></tr>
 		 <tr><td>悉</td> <td>乾</td> <td>度</td> <td>．</td> <td>揭</td> <td>啰</td> <td>诃</td></tr>
@@ -1137,7 +1230,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">105</td>
+       <td width="26px"  class="linenumber">105</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>ā</td> <td>bō</td> <td>xī</td> <td>mó</td> <td>là</td> <td>．</td> <td>jiē</td> <td>là</td> <td>hē</td></tr>
 		 <tr><td>阿</td> <td>播</td> <td>悉</td> <td>摩</td> <td>啰</td> <td>．</td> <td>揭</td> <td>啰</td> <td>诃</td></tr>
@@ -1146,7 +1239,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">106</td>
+       <td width="26px"  class="linenumber">106</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>wū</td> <td>tán</td> <td>mó</td> <td>tuó</td> <td>．</td> <td>jiē</td> <td>là</td> <td>hē</td></tr>
 		 <tr><td>乌</td> <td>檀</td> <td>摩</td> <td>陀</td> <td>．</td> <td>揭</td> <td>啰</td> <td>诃</td></tr>
@@ -1155,7 +1248,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">107</td>
+       <td width="26px"  class="linenumber">107</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>chē</td> <td>yè</td> <td>jiē</td> <td>là</td> <td>hē</td></tr>
 		 <tr><td>车</td> <td>夜</td> <td>揭</td> <td>啰</td> <td>诃</td></tr>
@@ -1164,7 +1257,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">108</td>
+       <td width="26px"  class="linenumber">108</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>xī</td> <td>lì</td> <td>pó</td> <td>dì</td> <td>．</td> <td>jiē</td> <td>là</td> <td>hē</td></tr>
 		 <tr><td>醯</td> <td>唎</td> <td>婆</td> <td>帝</td> <td>．</td> <td>揭</td> <td>啰</td> <td>诃</td></tr>
@@ -1173,7 +1266,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">109</td>
+       <td width="26px"  class="linenumber">109</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>shè</td> <td>duō</td> <td>hē</td> <td>lì</td> <td>nán</td></tr>
 		 <tr><td>社</td> <td>多</td> <td>诃</td> <td>唎</td> <td>南</td></tr>
@@ -1182,7 +1275,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">110</td>
+       <td width="26px"  class="linenumber">110</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>jiē</td> <td>pó</td> <td>hē</td> <td>lì</td> <td>nán</td></tr>
 		 <tr><td>揭</td> <td>婆</td> <td>诃</td> <td>唎</td> <td>南</td></tr>
@@ -1191,7 +1284,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">111</td>
+       <td width="26px"  class="linenumber">111</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>lú</td> <td>dì</td> <td>là</td> <td>．</td> <td>hē</td> <td>lì</td> <td>nán</td></tr>
 		 <tr><td>嚧</td> <td>地</td> <td>啰</td> <td>．</td> <td>诃</td> <td>唎</td> <td>南</td></tr>
@@ -1202,7 +1295,7 @@
 
    
    <tr class="buddyListNormal">
-       <td width="26px">112</td>
+       <td width="26px"  class="linenumber">112</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>máng</td> <td>suō</td> <td>hē</td> <td>lì</td> <td>nán</td></tr>
 		 <tr><td>忙</td> <td>娑</td> <td>诃</td> <td>唎</td> <td>南</td></tr>
@@ -1211,7 +1304,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">113</td>
+       <td width="26px"  class="linenumber">113</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>mí</td> <td>tuó</td> <td>hē</td> <td>lì</td> <td>nán</td></tr>
 		 <tr><td>谜</td> <td>陀</td> <td>诃</td> <td>唎</td> <td>南</td></tr>
@@ -1220,7 +1313,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">114</td>
+       <td width="26px"  class="linenumber">114</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>mó</td> <td>shé</td> <td>hē</td> <td>lì</td> <td>nán</td></tr>
 		 <tr><td>摩</td> <td>阇</td> <td>诃</td> <td>唎</td> <td>南</td></tr>
@@ -1229,7 +1322,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">115</td>
+       <td width="26px"  class="linenumber">115</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>shé</td> <td>duō</td> <td>hē</td> <td>lì</td> <td>nǚ</td></tr>
 		 <tr><td>阇</td> <td>多</td> <td>诃</td> <td>唎</td> <td>女</td></tr>
@@ -1238,7 +1331,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">116</td>
+       <td width="26px"  class="linenumber">116</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>shì</td> <td>bǐ</td> <td>duō</td> <td>hē</td> <td>lì</td> <td>nán</td></tr>
 		 <tr><td>视</td> <td>比</td> <td>多</td> <td>诃</td> <td>唎</td> <td>南</td></tr>
@@ -1247,7 +1340,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">117</td>
+       <td width="26px"  class="linenumber">117</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>pí</td> <td>duō</td> <td>hē</td> <td>lì</td> <td>nán</td></tr>
 		 <tr><td>毗</td> <td>多</td> <td>诃</td> <td>唎</td> <td>南</td></tr>
@@ -1256,7 +1349,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">118</td>
+       <td width="26px"  class="linenumber">118</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>pó</td> <td>duō</td> <td>hē</td> <td>lì</td> <td>nán</td></tr>
 		 <tr><td>婆</td> <td>多</td> <td>诃</td> <td>唎</td> <td>南</td></tr>
@@ -1265,7 +1358,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">119</td>
+       <td width="26px"  class="linenumber">119</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>ā</td> <td>shū</td> <td>zhē</td> <td>.</td> <td>hē</td> <td>lì</td> <td>nǚ</td></tr>
 		 <tr><td>阿</td> <td>输</td> <td>遮</td> <td>.</td> <td>诃</td> <td>唎</td> <td>女</td></tr>
@@ -1274,7 +1367,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">120</td>
+       <td width="26px"  class="linenumber">120</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>zhì</td> <td>duō</td> <td>hē</td> <td>lì</td> <td>nǚ</td></tr>
 		 <tr><td>质</td> <td>多</td> <td>诃</td> <td>唎</td> <td>女</td></tr>
@@ -1283,7 +1376,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">121</td>
+       <td width="26px"  class="linenumber">121</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>dì</td> <td>shān</td> <td>sà</td> <td>pí</td> <td>shān</td></tr>
 		 <tr><td>帝</td> <td>钐</td> <td>萨</td> <td>鞞</td> <td>钐</td></tr>
@@ -1293,7 +1386,7 @@
    </tr>
    
    <tr class="buddyListNormal">
-       <td width="26px">122</td>
+       <td width="26px"  class="linenumber">122</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>sà</td> <td>pó</td> <td>jiē</td> <td>là</td> <td>hē</td> <td>nán</td></tr>
 		 <tr><td>萨</td> <td>婆</td> <td>揭</td> <td>啰</td> <td>诃</td> <td>南</td></tr>
@@ -1302,7 +1395,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">123</td>
+       <td width="26px"  class="linenumber">123</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>pí</td> <td>tuó</td> <td>yè</td> <td>shé</td> <td>．</td> <td>chēn</td> <td>tuó</td> <td>yè</td> <td>mí</td> <td>．</td> <td>jī</td> <td>là</td> <td>yè</td> <td>mí</td></tr>
 		 <tr><td>毗</td> <td>陀</td> <td>耶</td> <td>阇</td> <td>．</td> <td>嗔</td> <td>陀</td> <td>夜</td> <td>弥</td> <td>．</td> <td>鸡</td> <td>啰</td> <td>夜</td> <td>弥</td></tr>
@@ -1312,7 +1405,7 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">124</td>
+       <td width="26px"  class="linenumber">124</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>bō</td> <td>lì</td> <td>bá</td> <td>là</td> <td>zhě</td> <td>jiā</td> <td>．</td> <td>qì</td> <td>lì</td> <td>dān</td></tr>
 		 <tr><td>波</td> <td>唎</td> <td>跋</td> <td>啰</td> <td>者</td> <td>迦</td> <td>．</td> <td>讫</td> <td>唎</td> <td>担</td></tr>
@@ -1321,7 +1414,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">125</td>
+       <td width="26px"  class="linenumber">125</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>pí</td> <td>tuó</td> <td>yè</td> <td>shé</td> <td>．</td> <td>chēn</td> <td>tuó</td> <td>yè</td> <td>mí</td> <td>．</td> <td>jī</td> <td>là</td> <td>yè</td> <td>mí</td></tr>
 		 <tr><td>毗</td> <td>陀</td> <td>夜</td> <td>阇</td> <td>．</td> <td>嗔</td> <td>陀</td> <td>夜</td> <td>弥</td> <td>．</td> <td>鸡</td> <td>啰</td> <td>夜</td> <td>弥</td></tr>
@@ -1331,7 +1424,7 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">126</td>
+       <td width="26px"  class="linenumber">126</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>chá</td> <td>yǎn</td> <td>ní</td> <td>．</td> <td>qì</td> <td>lì</td> <td>dān</td></tr>
 		 <tr><td>茶</td> <td>演</td> <td>尼</td> <td>．</td> <td>讫</td> <td>唎</td> <td>担</td></tr>
@@ -1340,7 +1433,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">127</td>
+       <td width="26px"  class="linenumber">127</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>pí</td> <td>tuó</td> <td>yè</td> <td>shé</td> <td>．</td> <td>chēn</td> <td>tuó</td> <td>yè</td> <td>mí</td> <td>．</td> <td>jī</td> <td>là</td> <td>yè</td> <td>mí</td></tr>
 		 <tr><td>毗</td> <td>陀</td> <td>夜</td> <td>阇</td> <td>．</td> <td>嗔</td> <td>陀</td> <td>夜</td> <td>弥</td> <td>．</td> <td>鸡</td> <td>啰</td> <td>夜</td> <td>弥</td></tr>
@@ -1350,7 +1443,7 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">128</td>
+       <td width="26px"  class="linenumber">128</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>mó</td> <td>hē</td> <td>bō</td> <td>shū</td> <td>bō</td> <td>dá</td> <td>yè</td></tr>
 		 <tr><td>摩</td> <td>诃</td> <td>般</td> <td>输</td> <td>般</td> <td>怛</td> <td>夜</td></tr>
@@ -1361,7 +1454,7 @@
 
    
    <tr class="buddyListNormal">
-       <td width="26px">129</td>
+       <td width="26px"  class="linenumber">129</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>lú</td> <td>tuó</td> <td>là</td> <td>．</td> <td>qì</td> <td>lì</td> <td>dān</td></tr>
 		 <tr><td>嚧</td> <td>陀</td> <td>啰</td> <td>．</td> <td>讫</td> <td>唎</td> <td>担</td></tr>
@@ -1370,7 +1463,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">130</td>
+       <td width="26px"  class="linenumber">130</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>pí</td> <td>tuó</td> <td>yè</td> <td>shé</td> <td>．</td> <td>chēn</td> <td>tuó</td> <td>yè</td> <td>mí</td> <td>．</td> <td>jī</td> <td>là</td> <td>yè</td> <td>mí</td></tr>
 		 <tr><td>毗</td> <td>陀</td> <td>夜</td> <td>阇</td> <td>．</td> <td>嗔</td> <td>陀</td> <td>夜</td> <td>弥</td> <td>．</td> <td>鸡</td> <td>啰</td> <td>夜</td> <td>弥</td></tr>
@@ -1380,7 +1473,7 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">131</td>
+       <td width="26px"  class="linenumber">131</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>nuó</td> <td>là</td> <td>yè</td> <td>ná</td> <td>．</td> <td>qì</td> <td>lì</td> <td>dān</td></tr>
 		 <tr><td>那</td> <td>啰</td> <td>夜</td> <td>拏</td> <td>．</td> <td>讫</td> <td>唎</td> <td>担</td></tr>
@@ -1389,7 +1482,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">132</td>
+       <td width="26px"  class="linenumber">132</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>pí</td> <td>tuó</td> <td>yè</td> <td>shé</td> <td>．</td> <td>chēn</td> <td>tuó</td> <td>yè</td> <td>mí</td> <td>．</td> <td>jī</td> <td>là</td> <td>yè</td> <td>mí</td></tr>
 		 <tr><td>毗</td> <td>陀</td> <td>夜</td> <td>阇</td> <td>．</td> <td>嗔</td> <td>陀</td> <td>夜</td> <td>弥</td> <td>．</td> <td>鸡</td> <td>啰</td> <td>夜</td> <td>弥</td></tr>
@@ -1399,7 +1492,7 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">133</td>
+       <td width="26px"  class="linenumber">133</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>dá</td> <td>duǒ</td> <td>qié</td> <td>lú</td> <td>chá</td> <td>xī</td> <td>．</td> <td>qì</td> <td>lì</td> <td>dān</td></tr>
 		 <tr><td>怛</td> <td>埵</td> <td>伽</td> <td>嚧</td> <td>茶</td> <td>西</td> <td>．</td> <td>讫</td> <td>唎</td> <td>担</td></tr>
@@ -1408,7 +1501,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">134</td>
+       <td width="26px"  class="linenumber">134</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>pí</td> <td>tuó</td> <td>yè</td> <td>shé</td> <td>．</td> <td>chēn</td> <td>tuó</td> <td>yè</td> <td>mí</td> <td>．</td> <td>jī</td> <td>là</td> <td>yè</td> <td>mí</td></tr>
 		 <tr><td>毗</td> <td>陀</td> <td>夜</td> <td>阇</td> <td>．</td> <td>嗔</td> <td>陀</td> <td>夜</td> <td>弥</td> <td>．</td> <td>鸡</td> <td>啰</td> <td>夜</td> <td>弥</td></tr>
@@ -1418,7 +1511,7 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">135</td>
+       <td width="26px"  class="linenumber">135</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>mó</td> <td>hē</td> <td>jiā</td> <td>là</td> <td>．</td> <td>mó</td> <td>dá</td> <td>lì</td> <td>qié</td> <td>ná</td> <td>．</td> <td>qì</td> <td>lì</td> <td>dān</td></tr>
 		 <tr><td>摩</td> <td>诃</td> <td>迦</td> <td>啰</td> <td>．</td> <td>摩</td> <td>怛</td> <td>唎</td> <td>伽</td> <td>拏</td> <td>．</td> <td>讫</td> <td>唎</td> <td>担</td></tr>
@@ -1428,7 +1521,7 @@
    </tr>
    
    <tr class="buddyListNormal">
-       <td width="26px">136</td>
+       <td width="26px"  class="linenumber">136</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>pí</td> <td>tuó</td> <td>yè</td> <td>shé</td> <td>．</td> <td>chēn</td> <td>tuó</td> <td>yè</td> <td>mí</td> <td>．</td> <td>jī</td> <td>là</td> <td>yè</td> <td>mí</td></tr>
 		 <tr><td>毗</td> <td>陀</td> <td>夜</td> <td>阇</td> <td>．</td> <td>嗔</td> <td>陀</td> <td>夜</td> <td>弥</td> <td>．</td> <td>鸡</td> <td>啰</td> <td>夜</td> <td>弥</td></tr>
@@ -1438,7 +1531,7 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">137</td>
+       <td width="26px"  class="linenumber">137</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>jiā</td> <td>bō</td> <td>lì</td> <td>jiā</td> <td>．</td> <td>qì</td> <td>lì</td> <td>dān</td></tr>
 		 <tr><td>迦</td> <td>波</td> <td>唎</td> <td>迦</td> <td>．</td> <td>讫</td> <td>唎</td> <td>担</td></tr>
@@ -1447,7 +1540,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">138</td>
+       <td width="26px"  class="linenumber">138</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>pí</td> <td>tuó</td> <td>yè</td> <td>shé</td> <td>．</td> <td>chēn</td> <td>tuó</td> <td>yè</td> <td>mí</td> <td>．</td> <td>jī</td> <td>là</td> <td>yè</td> <td>mí</td></tr>
 		 <tr><td>毗</td> <td>陀</td> <td>夜</td> <td>阇</td> <td>．</td> <td>嗔</td> <td>陀</td> <td>夜</td> <td>弥</td> <td>．</td> <td>鸡</td> <td>啰</td> <td>夜</td> <td>弥</td></tr>
@@ -1457,7 +1550,7 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">139</td>
+       <td width="26px"  class="linenumber">139</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>shé</td> <td>yè</td> <td>jié</td> <td>là</td> <td>．</td> <td>mó</td> <td>dù</td> <td>jié</td> <td>là</td></tr>
 		 <tr><td>阇</td> <td>夜</td> <td>羯</td> <td>啰</td> <td>．</td> <td>摩</td> <td>度</td> <td>羯</td> <td>啰</td></tr>
@@ -1466,7 +1559,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">140</td>
+       <td width="26px"  class="linenumber">140</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>sà</td> <td>pó</td> <td>là</td> <td>tuō</td> <td>suō</td> <td>dá</td> <td>nuó</td> <td>．</td> <td>qì</td> <td>lì</td> <td>dān</td></tr>
 		 <tr><td>萨</td> <td>婆</td> <td>啰</td> <td>他</td> <td>娑</td> <td>达</td> <td>那</td> <td>．</td> <td>讫</td> <td>唎</td> <td>担</td></tr>
@@ -1475,7 +1568,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">141</td>
+       <td width="26px"  class="linenumber">141</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>pí</td> <td>tuó</td> <td>yè</td> <td>shé</td> <td>．</td> <td>chēn</td> <td>tuó</td> <td>yè</td> <td>mí</td> <td>．</td> <td>jī </td><td>là</td> <td>yè</td> <td>mí</td></tr>
 		 <tr><td>毗</td> <td>陀</td> <td>夜</td> <td>阇</td> <td>．</td> <td>嗔</td> <td>陀</td> <td>夜</td> <td>弥</td> <td>．</td> <td>鸡</td> <td>啰</td> <td>夜</td> <td>弥</td></tr>
@@ -1485,7 +1578,7 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">142</td>
+       <td width="26px"  class="linenumber">142</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>zhě</td> <td>duō</td> <td>là</td> <td>．</td> <td>pó</td> <td>qí</td> <td>nǐ</td> <td>．</td> <td>qì</td> <td>lì</td> <td>dān</td></tr>
 		 <tr><td>赭</td> <td>咄</td> <td>啰</td> <td>．</td> <td>婆</td> <td>耆</td> <td>你</td> <td>．</td> <td>讫</td> <td>唎</td> <td>担</td></tr>
@@ -1496,7 +1589,7 @@
 
    
    <tr class="buddyListNormal">
-       <td width="26px">143</td>
+       <td width="26px"  class="linenumber">143</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>pí</td> <td>tuó</td> <td>yè</td> <td>shé</td> <td>．</td> <td>chēn</td> <td>tuó</td> <td>yè</td> <td>mí</td> <td>．</td> <td>jī</td> <td>là</td> <td>yè</td> <td>mí</td></tr>
 		 <tr><td>毗</td> <td>陀</td> <td>夜</td> <td>阇</td> <td>．</td> <td>嗔</td> <td>陀</td> <td>夜</td> <td>弥</td> <td>．</td> <td>鸡</td> <td>啰</td> <td>夜</td> <td>弥</td></tr>
@@ -1506,7 +1599,7 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">144</td>
+       <td width="26px"  class="linenumber">144</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>pí</td> <td>lì</td> <td>yáng</td> <td>．</td> <td>qì</td> <td>lì</td> <td>zhī</td></tr>
 		 <tr><td>毗</td> <td>唎</td> <td>羊</td> <td>．</td> <td>讫</td> <td>唎</td> <td>知</td></tr>
@@ -1515,7 +1608,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">145</td>
+       <td width="26px"  class="linenumber">145</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>nán</td> <td>tuó</td> <td>jī</td> <td>shā</td> <td>là</td> <td>．</td> <td>qié</td> <td>ná</td> <td>bō</td> <td>dì</td></tr>
 		 <tr><td>难</td> <td>陀</td> <td>鸡</td> <td>沙</td> <td>啰</td> <td>．</td> <td>伽</td> <td>拏</td> <td>般</td> <td>帝</td></tr>
@@ -1524,7 +1617,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">146</td>
+       <td width="26px"  class="linenumber">146</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>suǒ</td> <td>xī</td> <td>yè</td> <td>．</td> <td>qì</td> <td>lì</td> <td>dān</td></tr>
 		 <tr><td>索</td> <td>醯</td> <td>夜</td> <td>．</td> <td>讫</td> <td>唎</td> <td>担</td></tr>
@@ -1533,7 +1626,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">147</td>
+       <td width="26px"  class="linenumber">147</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>pí</td> <td>tuó</td> <td>yè</td> <td>shé</td> <td>．</td> <td>chēn</td> <td>tuó</td> <td>yè</td> <td>mí</td> <td>．</td> <td>jī</td> <td>là</td> <td>yè</td> <td>mí</td></tr>
 		 <tr><td>毗</td> <td>陀</td> <td>夜</td> <td>阇</td> <td>．</td> <td>嗔</td> <td>陀</td> <td>夜</td> <td>弥</td> <td>．</td> <td>鸡</td> <td>啰</td> <td>夜</td> <td>弥</td></tr>
@@ -1543,7 +1636,7 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">148</td>
+       <td width="26px"  class="linenumber">148</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>nuó</td> <td>jiē</td> <td>nuó</td> <td>．</td> <td>shě</td> <td>là</td> <td>pó</td> <td>ná</td> <td>．</td> <td>qì</td> <td>lì</td> <td>dān</td></tr>
 		 <tr><td>那</td> <td>揭</td> <td>那</td> <td>．</td> <td>舍</td> <td>啰</td> <td>婆</td> <td>拏</td> <td>．</td> <td>讫</td> <td>唎</td> <td>担</td></tr>
@@ -1552,7 +1645,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">149</td>
+       <td width="26px"  class="linenumber">149</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>pí</td> <td>tuó</td> <td>yè</td> <td>shé</td> <td>．</td> <td>chēn</td> <td>tuó</td> <td>yè</td> <td>mí</td> <td>．</td> <td>jī</td> <td>là</td> <td>yè</td> <td>mí</td></tr>
 		 <tr><td>毗</td> <td>陀</td> <td>夜</td> <td>阇</td> <td>．</td> <td>嗔</td> <td>陀</td> <td>夜</td> <td>弥</td> <td>．</td> <td>鸡</td> <td>啰</td> <td>夜</td> <td>弥</td></tr>
@@ -1563,7 +1656,7 @@
  
    
    <tr class="buddyListNormal">
-       <td width="26px">150</td>
+       <td width="26px"  class="linenumber">150</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>ā</td> <td>luó</td> <td>hàn</td> <td>．</td> <td>qì</td> <td>lì</td> <td>dān</td> </tr>
 		 <tr><td>阿</td> <td>罗</td> <td>汉</td> <td>．</td> <td>讫</td> <td>唎</td> <td>担</td></tr>
@@ -1574,7 +1667,7 @@
  
    
    <tr class="buddyListNormal">
-       <td width="26px">151</td>
+       <td width="26px"  class="linenumber">151</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>pí</td> <td>tuó</td> <td>yè</td> <td>shé</td> <td>．</td> <td>chēn</td> <td>tuó</td> <td>yè</td> <td>mí</td> <td>．</td> <td>jī <td>là</td> <td>yè</td> <td>mí</td></tr>
 		 <tr><td>毗</td> <td>陀</td> <td>夜</td> <td>阇</td> <td>．</td> <td>嗔</td> <td>陀</td> <td>夜</td> <td>弥</td> <td>．</td> <td>鸡</td> <td>啰</td> <td>夜</td> <td>弥</td></tr>
@@ -1585,7 +1678,7 @@
 
  
    <tr class="buddyListNormal">
-       <td width="26px">152</td>
+       <td width="26px"  class="linenumber">152</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>pí</td> <td>duō</td> <td>là</td> <td>qié</td> <td>．</td> <td>qì</td> <td>lì</td> <td>dān</td></tr>
 		 <tr><td>毗</td> <td>多</td> <td>啰</td> <td>伽</td> <td>．</td> <td>讫</td> <td>唎</td> <td>担</td></tr>
@@ -1595,7 +1688,7 @@
    </tr>
 
    <tr class="buddyListNormal">
-       <td width="26px">153</td>
+       <td width="26px"  class="linenumber">153</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>pí</td> <td>tuó</td> <td>yè</td> <td>shé</td> <td>．</td> <td>chēn</td> <td>tuó</td> <td>yè</td> <td>mí</td> <td>．</td> <td>jī</td> <td>là</td> <td>yè</td> <td>mí</td></tr>
 		 <tr><td>毗</td> <td>陀</td> <td>夜</td> <td>阇</td> <td>．</td> <td>嗔</td> <td>陀</td> <td>夜</td> <td>弥</td> <td>．</td> <td>鸡</td> <td>啰</td> <td>夜</td> <td>弥</td></tr>
@@ -1605,7 +1698,7 @@
    </tr>
 
    <tr class="buddyListNormal">
-       <td width="26px">154</td>
+       <td width="26px"  class="linenumber">154</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'> <td>bá</td> <td>shé</td> <td>là</td> <td>bō</td> <td>nǐ</td></tr>
 		 <tr> <td>跋</td> <td>阇</td> <td>啰</td> <td>波</td> <td>你</td></tr>
@@ -1614,7 +1707,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">155</td>
+       <td width="26px"  class="linenumber">155</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>jù</td> <td>xī</td> <td>yè</td> <td>．</td> <td>jù</td> <td>xī</td> <td>yè</td></tr>
 		 <tr><td>具</td> <td>醯</td> <td>夜</td> <td>．</td> <td>具</td> <td>醯</td> <td>夜</td></tr>
@@ -1623,7 +1716,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">156</td>
+       <td width="26px"  class="linenumber">156</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>jiā</td> <td>dì</td> <td>bō</td> <td>dì</td> <td>．</td> <td>qì</td> <td>lì</td> <td>dān</td></tr>
 		 <tr><td>迦</td> <td>地</td> <td>般</td> <td>帝</td> <td>．</td> <td>讫</td> <td>唎</td> <td>担</td></tr>
@@ -1632,7 +1725,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">157</td>
+       <td width="26px"  class="linenumber">157</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>pí</td> <td>tuó</td> <td>yè</td> <td>shé</td> <td>．</td> <td>chēn</td> <td>tuó</td> <td>yè</td> <td>mí</td> <td>．</td> <td>jī</td> <td>là</td> <td>yè</td> <td>mí</td></tr>
 		 <tr><td>毗</td> <td>陀</td> <td>夜</td> <td>阇</td> <td>．</td> <td>嗔</td> <td>陀</td> <td>夜</td> <td>弥</td> <td>．</td> <td>鸡</td> <td>啰</td> <td>夜</td> <td>弥</td></tr>
@@ -1642,7 +1735,7 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">158</td>
+       <td width="26px"  class="linenumber">158</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>là</td> <td>chā</td> <td>wǎng</td> <td>．</td> <td>pó</td> <td>qié</td> <td>fàn</td></tr>
 		 <tr><td>啰</td> <td>叉</td> <td>罔</td> <td>．</td> <td>婆</td> <td>伽</td> <td>梵</td></tr>
@@ -1652,7 +1745,7 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">159</td>
+       <td width="26px"  class="linenumber">159</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>yìn</td> <td>tù</td> <td>nuó</td> <td>．</td> <td>mó</td> <td>mó</td> <td>xiě</td></tr>
 		 <tr><td>印</td> <td>兔</td> <td>那</td> <td>．</td> <td>么</td> <td>么</td> <td>写</td></tr>
@@ -1662,12 +1755,12 @@
    </tr>
 
    <tr class="buddyListNormal">
-       <td width="26px"></td>
+       <td width="26px"  class="linenumber"></td>
        <td align="left" valign="middle">第四会  刚藏折摄会
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">160</td>
+       <td width="26px"  class="linenumber">160</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>pó</td> <td>qié</td> <td>fàn</td></tr>
 		 <tr><td>婆</td> <td>伽</td> <td>梵</td></tr>
@@ -1676,7 +1769,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">161</td>
+       <td width="26px"  class="linenumber">161</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>sà</td> <td>dá</td> <td>duō</td> <td>．</td> <td>bō</td> <td>dá</td> <td>là</td></tr>
 		 <tr><td>萨</td> <td>怛</td> <td>多</td> <td>．</td> <td>般</td> <td>怛</td> <td>啰</td></tr>
@@ -1685,7 +1778,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">162</td>
+       <td width="26px"  class="linenumber">162</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>nā</td> <td>mó</td> <td>cuì</td> <td>dū</td> <td>dì</td></tr>
 		 <tr><td>南</td> <td>无</td> <td>粹</td> <td>都</td> <td>帝</td></tr>
@@ -1694,7 +1787,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">163</td>
+       <td width="26px"  class="linenumber">163</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>ā</td> <td>xī</td> <td>duō</td> <td>．</td> <td>nuó</td> <td>là</td> <td>là</td> <td>jiā</td></tr>
 		 <tr><td>阿</td> <td>悉</td> <td>多</td> <td>．</td> <td>那</td> <td>啰</td> <td>剌</td> <td>迦</td></tr>
@@ -1703,7 +1796,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">164</td>
+       <td width="26px"  class="linenumber">164</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>bō</td> <td>là</td> <td>pó</td> <td>．</td> <td>xī</td> <td>pǔ</td> <td>zhà</td></tr>
 		 <tr><td>波</td> <td>啰</td> <td>婆</td> <td>．</td> <td>悉</td> <td>普</td> <td>吒</td></tr>
@@ -1712,7 +1805,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">165</td>
+       <td width="26px"  class="linenumber">165</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>pí</td> <td>jiā</td> <td>sà</td> <td>dá</td> <td>duō</td> <td>．</td> <td>bō</td> <td>dì</td> <td>lì</td></tr>
 		 <tr><td>毗</td> <td>迦</td> <td>萨</td> <td>怛</td> <td>多</td> <td>．</td> <td>钵</td> <td>帝</td> <td>唎</td></tr>
@@ -1721,7 +1814,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">166</td>
+       <td width="26px"  class="linenumber">166</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>shí</td> <td>fó</td> <td>là</td> <td>．</td> <td>shí</td> <td>fó</td> <td>là</td></tr>
 		 <tr><td>什</td> <td>佛</td> <td>啰</td> <td>．</td> <td>什</td> <td>佛</td> <td>啰</td></tr>
@@ -1730,7 +1823,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">167</td>
+       <td width="26px"  class="linenumber">167</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>tuó</td> <td>là</td> <td>tuó</td> <td>là</td></tr>
 		 <tr><td>陀</td> <td>啰</td> <td>陀</td> <td>啰</td></tr>
@@ -1740,7 +1833,7 @@
    </tr>
    
    <tr class="buddyListNormal">
-       <td width="26px">168</td>
+       <td width="26px"  class="linenumber">168</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>pín</td> <td>tuó</td> <td>là</td> <td>．</td> <td>pín</td> <td>tuó</td> <td>là</td> <td>．</td> <td>chēn</td> <td>tuó</td> <td>chēn</td> <td>tuó</td></tr>
 		 <tr><td>频</td> <td>陀</td> <td>啰</td> <td>．</td> <td>频</td> <td>陀</td> <td>啰</td> <td>．</td> <td>嗔</td> <td>陀</td> <td>嗔</td> <td>陀</td></tr>
@@ -1749,7 +1842,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">169</td>
+       <td width="26px"  class="linenumber">169</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>hǔ</td> <td>xīn</td> <td>．</td> <td>hǔ</td> <td>xīn</td></tr>
 		 <tr><td>虎</td> <td class="xin">合牛</td> <td>．</td> <td>虎</td> <td class="xin">合牛</td></tr>
@@ -1759,7 +1852,7 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">170</td>
+       <td width="26px"  class="linenumber">170</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>pàn</td> <td>zhà</td> <td>．</td> <td>pàn</td> <td>zhà</td> <td>．</td> <td>pàn</td> <td>zhà</td> </tr>
 		 <tr><td>泮</td> <td>吒</td> <td>．</td> <td>泮</td> <td>吒</td> <td>．</td> <td>泮</td> <td>吒</td> </tr>
@@ -1768,7 +1861,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">171</td>
+       <td width="26px"  class="linenumber">171</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>pàn</td> <td>zhà</td> <td>．</td> <td>pàn</td> <td>zhà</td></tr>
 		 <tr><td>泮</td> <td>吒</td> <td>．</td> <td>泮</td> <td>吒</td></tr>
@@ -1777,7 +1870,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">172</td>
+       <td width="26px"  class="linenumber">172</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>suō</td> <td>hē</td> <td>．</td> <td>xī</td> <td>xī</td> <td>pàn</td></tr>
 		 <tr><td>娑</td> <td>诃</td> <td>．</td> <td>醯</td> <td>醯</td> <td>泮</td></tr>
@@ -1787,7 +1880,7 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">173</td>
+       <td width="26px"  class="linenumber">173</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>ā</td> <td>móu</td> <td>jiā</td> <td>yē</td> <td>pàn</td></tr>
 		 <tr><td>阿</td> <td>牟</td> <td>迦</td> <td>耶</td> <td>泮</td></tr>
@@ -1796,7 +1889,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">174</td>
+       <td width="26px"  class="linenumber">174</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>ā</td> <td>bō</td> <td>là</td> <td>．</td> <td>tí</td> <td>hē</td> <td>duō</td> <td>pàn</td></tr>
 		 <tr><td>阿</td> <td>波</td> <td>啰</td> <td>．</td> <td>提</td> <td>诃</td> <td>多</td> <td>泮</td></tr>
@@ -1805,7 +1898,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">175</td>
+       <td width="26px"  class="linenumber">175</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>pó</td> <td>là</td> <td>bō</td> <td>là</td> <td>tuó</td> <td>pàn</td></tr>
 		 <tr><td>婆</td> <td>啰</td> <td>波</td> <td>啰</td> <td>陀</td> <td>泮</td></tr>
@@ -1816,7 +1909,7 @@
 
    
    <tr class="buddyListNormal">
-       <td width="26px">176</td>
+       <td width="26px"  class="linenumber">176</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>ā</td> <td>sù</td> <td>là</td> <td>．</td> <td>pí</td> <td>tuó</td> <td>là</td> <td>．</td> <td>bō</td> <td>jiā</td> <td>pàn</td></tr>
 		 <tr><td>阿</td> <td>素</td> <td>啰</td> <td>．</td> <td>毗</td> <td>陀</td> <td>啰</td> <td>．</td> <td>波</td> <td>迦</td> <td>泮</td></tr>
@@ -1825,7 +1918,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">177</td>
+       <td width="26px"  class="linenumber">177</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>sà</td> <td>pó</td> <td>tí</td> <td>pí</td> <td>bì</td> <td>pàn</td></tr>
 		 <tr><td>萨</td> <td>婆</td> <td>提</td> <td>鞞</td> <td>弊</td> <td>泮</td></tr>
@@ -1834,7 +1927,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">178</td>
+       <td width="26px"  class="linenumber">178</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>sà</td> <td>pó</td> <td>nuó</td> <td>qié</td> <td>bì</td> <td>pàn</td></tr>
 		 <tr><td>萨</td> <td>婆</td> <td>那</td> <td>伽</td> <td>弊</td> <td>泮</td></tr>
@@ -1843,7 +1936,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">179</td>
+       <td width="26px"  class="linenumber">179</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>sà</td> <td>pó</td> <td>yào</td> <td>chā</td> <td>bì</td> <td>pàn</td></tr>
 		 <tr><td>萨</td> <td>婆</td> <td>药</td> <td>叉</td> <td>弊</td> <td>泮</td></tr>
@@ -1852,7 +1945,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">180</td>
+       <td width="26px"  class="linenumber">180</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>sà</td> <td>pó</td> <td>qián</td> <td>tà</td> <td>pó</td> <td>bì</td> <td>pàn</td></tr>
 		 <tr><td>萨</td> <td>婆</td> <td>乾</td> <td>闼</td> <td>婆</td> <td>弊</td> <td>泮</td></tr>
@@ -1861,7 +1954,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">181</td>
+       <td width="26px"  class="linenumber">181</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>sà</td> <td>pó</td> <td>bǔ</td> <td>dān</td> <td>nuó</td> <td>bì</td> <td>pàn</td></tr>
 		 <tr><td>萨</td> <td>婆</td> <td>补</td> <td>丹</td> <td>那</td> <td>弊</td> <td>泮</td></tr>
@@ -1870,7 +1963,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">182</td>
+       <td width="26px"  class="linenumber">182</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>jiā</td> <td>zhà</td> <td>bǔ</td> <td>dān</td> <td>nuó</td> <td>bì</td> <td>pàn</td></tr>
 		 <tr><td>迦</td> <td>吒</td> <td>补</td> <td>丹</td> <td>那</td> <td>弊</td> <td>泮</td></tr>
@@ -1879,7 +1972,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">183</td>
+       <td width="26px"  class="linenumber">183</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>sà</td> <td>pó</td> <td>tū</td> <td>láng</td> <td>zhǐ</td> <td>dì</td> <td>bì</td> <td>pàn</td></tr>
 		 <tr><td>萨</td> <td>婆</td> <td>突</td> <td>狼</td> <td>枳</td> <td>帝</td> <td>弊</td> <td>泮</td></tr>
@@ -1888,7 +1981,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">184</td>
+       <td width="26px"  class="linenumber">184</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>sà</td> <td>pó</td> <td>tū</td> <td>sè</td> <td>bǐ</td> <td>lí</td> <td>．</td> <td>qì</td> <td>sè</td> <td>dì</td> <td>bì</td> <td>pàn</td></tr>
 		 <tr><td>萨</td> <td>婆</td> <td>突</td> <td>涩</td> <td>比</td> <td>犁</td> <td>．</td> <td>讫</td> <td>瑟</td> <td>帝</td> <td>弊</td> <td>泮</td></tr>
@@ -1897,7 +1990,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">185</td>
+       <td width="26px"  class="linenumber">185</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>sà</td> <td>pó</td> <td>shí</td> <td>pó</td> <td>lí</td> <td>bì</td> <td>pàn</td></tr>
 		 <tr><td>萨</td> <td>婆</td> <td>什</td> <td>婆</td> <td>利</td> <td>弊</td> <td>泮</td></tr>
@@ -1907,7 +2000,7 @@
    </tr>
    
    <tr class="buddyListNormal">
-       <td width="26px">186</td>
+       <td width="26px"  class="linenumber">186</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>sà</td> <td>pó</td> <td>ā</td> <td>bō</td> <td>xī</td> <td>mó</td> <td>lí</td> <td>bì</td> <td>pàn</td></tr>
 		 <tr><td>萨</td> <td>婆</td> <td>阿</td> <td>播</td> <td>悉</td> <td>么</td> <td>犂</td> <td>弊</td> <td>泮</td></tr>
@@ -1916,7 +2009,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">187</td>
+       <td width="26px"  class="linenumber">187</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>sà</td> <td>pó</td> <td>shě</td> <td>là</td> <td>pó</td> <td>ná</td> <td>bì</td> <td>pàn</td></tr>
 		 <tr><td>萨</td> <td>婆</td> <td>舍</td> <td>啰</td> <td>婆</td> <td>拏</td> <td>弊</td> <td>泮</td></tr>
@@ -1925,7 +2018,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">188</td>
+       <td width="26px"  class="linenumber">188</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>sà</td> <td>pó</td> <td>dì</td> <td>dì</td> <td>jī</td> <td>bì</td> <td>pàn</td></tr>
 		 <tr><td>萨</td> <td>婆</td> <td>地</td> <td>帝</td> <td>鸡</td> <td>弊</td> <td>泮</td></tr>
@@ -1934,7 +2027,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">189</td>
+       <td width="26px"  class="linenumber">189</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>sà</td> <td>pó</td> <td>dá</td> <td>mó</td> <td>tuó</td> <td>jì</td> <td>bì</td> <td>pàn</td></tr>
 		 <tr><td>萨</td> <td>婆</td> <td>怛</td> <td>摩</td> <td>陀</td> <td>继</td> <td>弊</td> <td>泮</td></tr>
@@ -1943,7 +2036,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">190</td>
+       <td width="26px"  class="linenumber">190</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>sà</td> <td>pó</td> <td>pí</td> <td>tuó</td> <td>yē</td> <td>．</td> <td>là</td> <td>shì</td> <td>zhē</td> <td>lí</td> <td>bì</td> <td>pàn</td></tr>
 		 <tr><td>萨</td> <td>婆</td> <td>毗</td> <td>陀</td> <td>耶</td> <td>．</td> <td>啰</td> <td>誓</td> <td>遮</td> <td>犂</td> <td>弊</td> <td>泮</td></tr>
@@ -1952,7 +2045,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">191</td>
+       <td width="26px"  class="linenumber">191</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>shé</td> <td>yè</td> <td>jié</td> <td>là</td> <td>．</td> <td>mó</td> <td>dù</td> <td>jié</td> <td>là</td></tr>
 		 <tr><td>阇</td> <td>夜</td> <td>羯</td> <td>啰</td> <td>．</td> <td>摩</td> <td>度</td> <td>羯</td> <td>啰</td></tr>
@@ -1961,7 +2054,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">192</td>
+       <td width="26px"  class="linenumber">192</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>sà</td> <td>pó</td> <td>là</td> <td>tuō</td> <td>suō</td> <td>tuó</td> <td>jī</td> <td>bì</td> <td>pàn</td></tr>
 		 <tr><td>萨</td> <td>婆</td> <td>啰</td> <td>他</td> <td>娑</td> <td>陀</td> <td>鸡</td> <td>弊</td> <td>泮</td></tr>
@@ -1970,7 +2063,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">193</td>
+       <td width="26px"  class="linenumber">193</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>pí</td> <td>dì</td> <td>yè</td> <td>．</td> <td>zhē</td> <td>lì</td> <td>bì</td> <td>pàn</td></tr>
 		 <tr><td>毗</td> <td>地</td> <td>夜</td> <td>．</td> <td>遮</td> <td>唎</td> <td>弊</td> <td>泮</td></tr>
@@ -1979,7 +2072,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">194</td>
+       <td width="26px"  class="linenumber">194</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>zhě</td> <td>dū</td> <td>là</td> <td>．</td> <td>fù</td> <td>qí</td> <td>nǐ</td> <td>bì</td> <td>pàn</td></tr>
 		 <tr><td>者</td> <td>都</td> <td>啰</td> <td>．</td> <td>缚</td> <td>耆</td> <td>你</td> <td>弊</td> <td>泮</td></tr>
@@ -1988,7 +2081,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">195</td>
+       <td width="26px"  class="linenumber">195</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>bá</td> <td>shé</td> <td>là</td> <td>．</td> <td>jù</td> <td>mó</td> <td>lì</td></tr>
 		 <tr><td>跋</td> <td>阇</td> <td>啰</td> <td>．</td> <td>俱</td> <td>摩</td> <td>唎</td></tr>
@@ -1999,7 +2092,7 @@
 
    
    <tr class="buddyListNormal">
-       <td width="26px">196</td>
+       <td width="26px"  class="linenumber">196</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>pí</td> <td>tuó</td> <td>yè</td> <td>．</td> <td>là</td> <td>shì</td> <td>bì</td> <td>pàn</td></tr>
 		 <tr><td>毗</td> <td>陀</td> <td>夜</td> <td>．</td> <td>啰</td> <td>誓</td> <td>弊</td> <td>泮</td></tr>
@@ -2008,7 +2101,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">197</td>
+       <td width="26px"  class="linenumber">197</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>mó</td> <td>hē</td> <td>bō</td> <td>là</td> <td>dīng</td> <td>yáng</td> <td>．</td> <td>yì</td> <td>qí</td> <td>lì</td> <td>bì</td> <td>pàn</td></tr>
 		 <tr><td>摩</td> <td>诃</td> <td>波</td> <td>啰</td> <td>丁</td> <td>羊</td> <td>．</td> <td>乂</td> <td>耆</td> <td>唎</td> <td>弊</td> <td>泮</td></tr>
@@ -2017,7 +2110,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">198</td>
+       <td width="26px"  class="linenumber">198</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>bá</td> <td>shé</td> <td>là</td> <td>．</td> <td>shāng</td> <td>jié</td> <td>là</td> <td>yè</td></tr>
 		 <tr><td>跋</td> <td>阇</td> <td>啰</td> <td>．</td> <td>商</td> <td>羯</td> <td>啰</td> <td>夜</td></tr>
@@ -2026,7 +2119,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">199</td>
+       <td width="26px"  class="linenumber">199</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>bō</td> <td>là</td> <td>zhàng</td> <td>qí</td> <td>．</td> <td>là</td> <td>shé</td> <td>yē</td> <td>pàn</td></tr>
 		 <tr><td>波</td> <td>啰</td> <td>丈</td> <td>耆</td> <td>．</td> <td>啰</td> <td>阇</td> <td>耶</td> <td>泮</td></tr>
@@ -2035,7 +2128,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">200</td>
+       <td width="26px"  class="linenumber">200</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>mó</td> <td>hē</td> <td>jiā</td> <td>là</td> <td>yè</td></tr>
 		 <tr><td>摩</td> <td>诃</td> <td>迦</td> <td>啰</td> <td>夜</td></tr>
@@ -2044,7 +2137,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">201</td>
+       <td width="26px"  class="linenumber">201</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>mó</td> <td>hē</td> <td>mò</td> <td>dá</td> <td>lì</td> <td>jiā</td> <td>ná</td></tr>
 		 <tr><td>摩</td> <td>诃</td> <td>末</td> <td>怛</td> <td>唎</td> <td>迦</td> <td>拏</td></tr>
@@ -2053,7 +2146,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">202</td>
+       <td width="26px"  class="linenumber">202</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>nā</td> <td>mó</td> <td>suō</td> <td>jié</td> <td>lì</td> <td>duō</td> <td>yè</td> <td>pàn</td></tr>
 		 <tr><td>南</td> <td>无</td> <td>娑</td> <td>羯</td> <td>唎</td> <td>多</td> <td>夜</td> <td>泮</td></tr>
@@ -2062,7 +2155,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">203</td>
+       <td width="26px"  class="linenumber">203</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>bì</td> <td>sè</td> <td>ná</td> <td>pí</td> <td>yè</td> <td>pàn</td></tr>
 		 <tr><td>毖</td> <td>瑟</td> <td>拏</td> <td>婢</td> <td>曳</td> <td>泮</td></tr>
@@ -2071,7 +2164,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">204</td>
+       <td width="26px"  class="linenumber">204</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>bó</td> <td>là</td> <td>hē</td> <td>móu</td> <td>ní</td> <td>yè</td> <td>pàn</td></tr>
 		 <tr><td>勃</td> <td>啰</td> <td>诃</td> <td>牟</td> <td>尼</td> <td>曳</td> <td>泮</td></tr>
@@ -2080,7 +2173,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">205</td>
+       <td width="26px"  class="linenumber">205</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>ā</td> <td>qí</td> <td>ní</td> <td>yè</td> <td>pàn</td></tr>
 		 <tr><td>阿</td> <td>耆</td> <td>尼</td> <td>曳</td> <td>泮</td></tr>
@@ -2090,7 +2183,7 @@
    </tr>
    
    <tr class="buddyListNormal">
-       <td width="26px">206</td>
+       <td width="26px"  class="linenumber">206</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>mó</td> <td>hē</td> <td>jié</td> <td>lì</td> <td>yè</td> <td>pàn</td></tr>
 		 <tr><td>摩</td> <td>诃</td> <td>羯</td> <td>唎</td> <td>曳</td> <td>泮</td></tr>
@@ -2099,7 +2192,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">207</td>
+       <td width="26px"  class="linenumber">207</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>jié</td> <td>là</td> <td>tán</td> <td>chí</td> <td>yè</td> <td>pàn</td></tr>
 		 <tr><td>羯</td> <td>啰</td> <td>檀</td> <td>迟</td> <td>曳</td> <td>泮</td></tr>
@@ -2108,7 +2201,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">208</td>
+       <td width="26px"  class="linenumber">208</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>miè</td> <td>dá</td> <td>lì</td> <td>yè</td> <td>pàn</td></tr>
 		 <tr><td>蔑</td> <td>怛</td> <td>唎</td> <td>曳</td> <td>泮</td></tr>
@@ -2117,7 +2210,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">209</td>
+       <td width="26px"  class="linenumber">209</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>lào</td> <td>dá</td> <td>lì</td> <td>yè</td> <td>pàn</td></tr>
 		 <tr><td>唠</td> <td>怛</td> <td>唎</td> <td>曳</td> <td>泮</td></tr>
@@ -2126,7 +2219,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">210</td>
+       <td width="26px"  class="linenumber">210</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>zhē</td> <td>wén</td> <td>chá</td> <td>yè</td> <td>pàn</td></tr>
 		 <tr><td>遮</td> <td>文</td> <td>茶</td> <td>曳</td> <td>泮</td></tr>
@@ -2135,7 +2228,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">211</td>
+       <td width="26px"  class="linenumber">211</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>jié</td> <td>luó</td> <td>là</td> <td>dá</td> <td>lì</td> <td>yè</td> <td>pàn</td></tr>
 		 <tr><td>羯</td> <td>逻</td> <td>啰</td> <td>怛</td> <td>唎</td> <td>曳</td> <td>泮</td></tr>
@@ -2144,7 +2237,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">212</td>
+       <td width="26px"  class="linenumber">212</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>jiā</td> <td>bō</td> <td>lì</td> <td>yè</td> <td>pàn</td></tr>
 		 <tr><td>迦</td> <td>般</td> <td>唎</td> <td>曳</td> <td>泮</td></tr>
@@ -2153,7 +2246,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">213</td>
+       <td width="26px"  class="linenumber">213</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>ā <td>dì</td> <td>mù</td> <td>zhì</td> <td>duō</td> <td>．</td> <td>jiā</td> <td>shī</td> <td>mó</td> <td>shě</td> <td>nuó</td></tr>
 		 <tr><td>阿</td> <td>地</td> <td>目</td> <td>质</td> <td>多</td> <td>．</td> <td>迦</td> <td>尸</td> <td>摩</td> <td>舍</td> <td>那</td></tr>
@@ -2162,7 +2255,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">214</td>
+       <td width="26px"  class="linenumber">214</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>pó</td> <td>sī</td> <td>nǐ</td> <td>yè</td> <td>pàn</td></tr>
 		 <tr><td>婆</td> <td>私</td> <td>你</td> <td>曳</td> <td>泮</td></tr>
@@ -2171,7 +2264,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">215</td>
+       <td width="26px"  class="linenumber">215</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>yǎn</td> <td>jí</td> <td>zhì</td> <td>．</td> <td>sà</td> <td>duǒ</td> <td>pó</td> <td>xiě</td></tr>
 		 <tr><td>演</td> <td>吉</td> <td>质</td> <td>．</td> <td>萨</td> <td>埵</td> <td>婆</td> <td>写</td></tr>
@@ -2181,7 +2274,7 @@
    </tr>
  
    <tr class="buddyListNormal">
-       <td width="26px">216</td>
+       <td width="26px"  class="linenumber">216</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>mó</td> <td>mó</td> <td>yìn</td> <td>tù</td> <td>nuó</td> <td>．</td> <td>mó</td> <td>mó</td> <td>xiě</td></tr>
 		 <tr><td>么</td> <td>么</td> <td>印</td> <td>兔</td> <td>那</td> <td>．</td> <td>么</td> <td>么</td> <td>写</td></tr>
@@ -2191,11 +2284,11 @@
    </tr>
 
    <tr class="buddyListNormal">
-       <td width="26px"></td>
+       <td width="26px"  class="linenumber"></td>
        <td align="left" valign="middle">第五会 文殊弘传会</td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">217</td>
+       <td width="26px"  class="linenumber">217</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>tū</td> <td>sè</td> <td>zhà</td> <td>zhì</td> <td>duō</td></tr>
 		 <tr><td>突</td> <td>瑟</td> <td>吒</td> <td>质</td> <td>多</td></tr>
@@ -2204,7 +2297,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">218</td>
+       <td width="26px"  class="linenumber">218</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>ā</td> <td>mò</td> <td>dá</td> <td>lì</td> <td>zhì</td> <td>duō</td></tr>
 		 <tr><td>阿</td> <td>末</td> <td>怛</td> <td>唎</td> <td>质</td> <td>多</td></tr>
@@ -2213,7 +2306,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">219</td>
+       <td width="26px"  class="linenumber">219</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>wū</td> <td>shé</td> <td>hē</td> <td>là</td></tr>
 		 <tr><td>乌</td> <td>阇</td> <td>诃</td> <td>啰</td></tr>
@@ -2222,7 +2315,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">220</td>
+       <td width="26px"  class="linenumber">220</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>qié</td> <td>pó</td> <td>hē</td> <td>là</td></tr>
 		 <tr><td>伽</td> <td>婆</td> <td>诃</td> <td>啰</td></tr>
@@ -2231,7 +2324,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">221</td>
+       <td width="26px"  class="linenumber">221</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>lú</td> <td>dì</td> <td>là</td> <td>hē</td> <td>là</td></tr>
 		 <tr><td>嚧</td> <td>地</td> <td>啰</td> <td>诃</td> <td>啰</td></tr>
@@ -2240,7 +2333,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">222</td>
+       <td width="26px"  class="linenumber">222</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>pó</td> <td>suō</td> <td>hē</td> <td>là</td></tr>
 		 <tr><td>婆</td> <td>娑</td> <td>诃</td> <td>啰</td></tr>
@@ -2249,7 +2342,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">223</td>
+       <td width="26px"  class="linenumber">223</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>mó</td> <td>shé</td> <td>hē</td> <td>là</td></tr>
 		 <tr><td>摩</td> <td>阇</td> <td>诃</td> <td>啰</td></tr>
@@ -2258,7 +2351,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">224</td>
+       <td width="26px"  class="linenumber">224</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>shé</td> <td>duō</td> <td>hē</td> <td>là</td></tr>
 		 <tr><td>阇</td> <td>多</td> <td>诃</td> <td>啰</td></tr>
@@ -2268,7 +2361,7 @@
    </tr>
    
    <tr class="buddyListNormal">
-       <td width="26px">225</td>
+       <td width="26px"  class="linenumber">225</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>shì</td> <td>bì</td> <td>duō</td> <td>hē</td> <td>là</td></tr>
 		 <tr><td>视</td> <td>毖</td> <td>多</td> <td>诃</td> <td>啰</td></tr>
@@ -2277,7 +2370,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">226</td>
+       <td width="26px"  class="linenumber">226</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>bá</td> <td>lüè</td> <td>yè</td> <td>hē</td> <td>là</td></tr>
 		 <tr><td>跋</td> <td>略</td> <td>夜</td> <td>诃</td> <td>啰</td></tr>
@@ -2286,7 +2379,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">227</td>
+       <td width="26px"  class="linenumber">227</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>qián</td> <td>tuó</td> <td>hē</td> <td>là</td></tr>
 		 <tr><td>乾</td> <td>陀</td> <td>诃</td> <td>啰</td></tr>
@@ -2295,7 +2388,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">228</td>
+       <td width="26px"  class="linenumber">228</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>bù</td> <td>shǐ</td> <td>bō</td> <td>hē</td> <td>là</td></tr>
 		 <tr><td>布</td> <td>史</td> <td>波</td> <td>诃</td> <td>啰</td></tr>
@@ -2304,7 +2397,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">229</td>
+       <td width="26px"  class="linenumber">229</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>pō</td> <td>là</td> <td>hē</td> <td>là</td></tr>
 		 <tr><td>颇</td> <td>啰</td> <td>诃</td> <td>啰</td></tr>
@@ -2313,7 +2406,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">230</td>
+       <td width="26px"  class="linenumber">230</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>pó</td> <td>xiě</td> <td>hē</td> <td>là</td></tr>
 		 <tr><td>婆</td> <td>写</td> <td>诃</td> <td>啰</td></tr>
@@ -2322,7 +2415,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">231</td>
+       <td width="26px"  class="linenumber">231</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>bō</td> <td>bō</td> <td>zhì</td> <td>duō</td></tr>
 		 <tr><td>般</td> <td>波</td> <td>质</td> <td>多</td></tr>
@@ -2331,7 +2424,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">232</td>
+       <td width="26px"  class="linenumber">232</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>tū</td> <td>sè</td> <td>zhà</td> <td>zhì</td> <td>duō</td></tr>
 		 <tr><td>突</td> <td>瑟</td> <td>吒</td> <td>质</td> <td>多</td></tr>
@@ -2340,7 +2433,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">233</td>
+       <td width="26px"  class="linenumber">233</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>lào</td> <td>tuó</td> <td>là</td> <td>zhì</td> <td>duō</td></tr>
 		 <tr><td>唠</td> <td>陀</td> <td>啰</td> <td>质</td> <td>多</td></tr>
@@ -2349,7 +2442,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">234</td>
+       <td width="26px"  class="linenumber">234</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>yào</td> <td>chā</td> <td>jiē</td> <td>là</td> <td>hē</td></tr>
 		 <tr><td>药</td> <td>叉</td> <td>揭</td> <td>啰</td> <td>诃</td></tr>
@@ -2360,7 +2453,7 @@
 
    
    <tr class="buddyListNormal">
-       <td width="26px">235</td>
+       <td width="26px"  class="linenumber">235</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>là</td> <td>chà</td> <td>suō</td> <td>．</td> <td>jiē</td> <td>là</td> <td>hē</td></tr>
 		 <tr><td>啰</td> <td>刹</td> <td>娑</td> <td>．</td> <td>揭</td> <td>啰</td> <td>诃</td></tr>
@@ -2369,7 +2462,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">236</td>
+       <td width="26px"  class="linenumber">236</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>bì</td> <td>lí</td> <td>duō</td> <td>．</td> <td>jiē</td> <td>là</td> <td>hē</td></tr>
 		 <tr><td>闭</td> <td class="xin">口隸</td> <td>多</td> <td>．</td> <td>揭</td> <td>啰</td> <td>诃</td></tr>
@@ -2378,7 +2471,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">237</td>
+       <td width="26px"  class="linenumber">237</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>pí</td> <td>shě</td> <td>zhē</td> <td>．</td> <td>jiē</td> <td>là</td> <td>hē</td></tr>
 		 <tr><td>毗</td> <td>舍</td> <td>遮</td> <td>．</td> <td>揭</td> <td>啰</td> <td>诃</td></tr>
@@ -2387,7 +2480,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">238</td>
+       <td width="26px"  class="linenumber">238</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>bù</td> <td>duō</td> <td>jiē</td> <td>là</td> <td>hē</td></tr>
 		 <tr><td>部</td> <td>多</td> <td>揭</td> <td>啰</td> <td>诃</td></tr>
@@ -2396,7 +2489,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">239</td>
+       <td width="26px"  class="linenumber">239</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>jiū</td> <td>pán</td> <td>cha</td> <td>．</td> <td>jiē</td> <td>là</td> <td>hē</td></tr>
 		 <tr><td>鸠</td> <td>槃</td> <td>茶</td> <td>．</td> <td>揭</td> <td>啰</td> <td>诃</td></tr>
@@ -2405,7 +2498,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">240</td>
+       <td width="26px"  class="linenumber">240</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>xī</td> <td>qián</td> <td>tuó</td> <td>．</td> <td>jiē</td> <td>là</td> <td>hē</td></tr>
 		 <tr><td>悉</td> <td>乾</td> <td>陀</td> <td>．</td> <td>揭</td> <td>啰</td> <td>诃</td></tr>
@@ -2414,7 +2507,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">241</td>
+       <td width="26px"  class="linenumber">241</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>wū</td> <td>dá</td> <td>mó</td> <td>tuó</td> <td>．</td> <td>jiē</td> <td>là</td> <td>hē</td></tr>
 		 <tr><td>乌</td> <td>怛</td> <td>摩</td> <td>陀</td> <td>．</td> <td>揭</td> <td>啰</td> <td>诃</td></tr>
@@ -2423,7 +2516,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">242</td>
+       <td width="26px"  class="linenumber">242</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>chē</td> <td>yè</td> <td>jiē</td> <td>là</td> <td>hē</td></tr>
 		 <tr><td>车</td> <td>夜</td> <td>揭</td> <td>啰</td> <td>诃</td></tr>
@@ -2432,7 +2525,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">243</td>
+       <td width="26px"  class="linenumber">243</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>ā</td> <td>bō</td> <td>sà</td> <td>mó</td> <td>là</td> <td>．</td> <td>jiē</td> <td>là</td> <td>hē</td></tr>
 		 <tr><td>阿</td> <td>播</td> <td>萨</td> <td>摩</td> <td>啰</td> <td>．</td> <td>揭</td> <td>啰</td> <td>诃</td></tr>
@@ -2441,7 +2534,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">244</td>
+       <td width="26px"  class="linenumber">244</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>zhái</td> <td>qū</td> <td>gé</td> <td>．</td> <td>chá</td> <td>qí</td> <td>ní</td> <td>．</td> <td>jiē</td> <td>là</td> <td>hē</td></tr>
 		 <tr><td>宅</td> <td>袪</td> <td>革</td> <td>．</td> <td>茶</td> <td>耆</td> <td>尼</td> <td>．</td> <td>揭</td> <td>啰</td> <td>诃</td></tr>
@@ -2451,7 +2544,7 @@
    </tr>
    
    <tr class="buddyListNormal">
-       <td width="26px">245</td>
+       <td width="26px"  class="linenumber">245</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>lì</td> <td>fó</td> <td>dì</td> <td>．</td> <td>jiē</td> <td>là</td> <td>hē</td></tr>
 		 <tr><td>唎</td> <td>佛</td> <td>帝</td> <td>．</td> <td>揭</td> <td>啰</td> <td>诃</td></tr>
@@ -2460,7 +2553,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">246</td>
+       <td width="26px"  class="linenumber">246</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>shé</td> <td>mí</td> <td>jiā</td> <td>．</td> <td>jiē</td> <td>là</td> <td>hē</td></tr>
 		 <tr><td>阇</td> <td>弥</td> <td>迦</td> <td>．</td> <td>揭</td> <td>啰</td> <td>诃</td></tr>
@@ -2469,7 +2562,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">247</td>
+       <td width="26px"  class="linenumber">247</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>shě</td> <td>jù</td> <td>ní</td> <td>．</td> <td>jiē</td> <td>là</td> <td>hē</td></tr>
 		 <tr><td>舍</td> <td>俱</td> <td>尼</td> <td>．</td> <td>揭</td> <td>啰</td> <td>诃</td></tr>
@@ -2478,7 +2571,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">248</td>
+       <td width="26px"  class="linenumber">248</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>lǎo</td> <td>tuó</td> <td>là</td> <td>nán</td> <td>dì</td> <td>jiā</td> <td>．</td> <td>jiē</td> <td>là</td> <td>hē</td></tr>
 		 <tr><td>姥</td> <td>陀</td> <td>啰</td> <td>难</td> <td>地</td> <td>迦</td> <td>．</td> <td>揭</td> <td>啰</td> <td>诃</td></tr>
@@ -2487,7 +2580,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">249</td>
+       <td width="26px"  class="linenumber">249</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>ā</td> <td>lán</td> <td>pó</td> <td>．</td> <td>jiē</td> <td>là</td> <td>hē</td></tr>
 		 <tr><td>阿</td> <td>蓝</td> <td>婆</td> <td>．</td> <td>揭</td> <td>啰</td> <td>诃</td></tr>
@@ -2496,7 +2589,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">250</td>
+       <td width="26px"  class="linenumber">250</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>qián</td> <td>dù</td> <td>bō</td> <td>ní</td> <td>．</td> <td>jiē</td> <td>là</td> <td>hē</td></tr>
 		 <tr><td>乾</td> <td>度</td> <td>波</td> <td>尼</td> <td>．</td> <td>揭</td> <td>啰</td> <td>诃</td></tr>
@@ -2505,7 +2598,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">251</td>
+       <td width="26px"  class="linenumber">251</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>shí <td>fá</td> <td>là</td> <td>．</td> <td>yīn</td> <td>jiā</td> <td>xī</td> <td>jiā</td></tr>
 		 <tr><td>什</td> <td>伐</td> <td>啰</td> <td>．</td> <td>堙</td> <td>迦</td> <td>醯</td> <td>迦</td></tr>
@@ -2514,7 +2607,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">252</td>
+       <td width="26px"  class="linenumber">252</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>zhuì</td> <td>dì</td> <td>yào</td> <td>jiā</td></tr>
 		 <tr><td>坠</td> <td>帝</td> <td>药</td> <td>迦</td></tr>
@@ -2523,7 +2616,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">253</td>
+       <td width="26px"  class="linenumber">253</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>dá</td> <td>lì</td> <td>dì</td> <td>yào</td> <td>jiā</td></tr>
 		 <tr><td>怛</td> <td class="xin">口隸</td> <td>帝</td> <td>药</td> <td>迦</td></tr>
@@ -2532,7 +2625,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">254</td>
+       <td width="26px"  class="linenumber">254</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>zhě</td> <td>tū</td> <td>tuō</td> <td>jiā</td></tr>
 		 <tr><td>者</td> <td>突</td> <td>讬</td> <td>迦</td></tr>
@@ -2543,7 +2636,7 @@
 
    
    <tr class="buddyListNormal">
-       <td width="26px">255</td>
+       <td width="26px"  class="linenumber">255</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>ní</td> <td>tí</td> <td>shí</td> <td>fá</td> <td>là</td> <td>．</td> <td>bì</td> <td>shān</td> <td>mó</td> <td>．</td> <td>shí</td> <td>fá</td> <td>là</td></tr>
 		 <tr><td>尼</td> <td>提</td> <td>什</td> <td>伐</td> <td>啰</td> <td>．</td> <td>毖</td> <td>钐</td> <td>摩</td> <td>．</td> <td>什</td> <td>伐</td> <td>啰</td></tr>
@@ -2552,7 +2645,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">256</td>
+       <td width="26px"  class="linenumber">256</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>bù</td> <td>dǐ</td> <td>jiā</td></tr>
 		 <tr><td>薄</td> <td>底</td> <td>迦</td></tr>
@@ -2561,7 +2654,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">257</td>
+       <td width="26px"  class="linenumber">257</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>bí</td> <td>dǐ</td> <td>jiā</td></tr>
 		 <tr><td>鼻</td> <td>底</td> <td>迦</td></tr>
@@ -2570,7 +2663,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">258</td>
+       <td width="26px"  class="linenumber">258</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>shì</td> <td>lì</td> <td>sè</td> <td>mì</td> <td>jiā</td></tr>
 		 <tr><td>室</td> <td>隶</td> <td>瑟</td> <td>密</td> <td>迦</td></tr>
@@ -2579,7 +2672,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">259</td>
+       <td width="26px"  class="linenumber">259</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>suō</td> <td>nǐ</td> <td>bō</td> <td>dì</td> <td>jiā</td></tr>
 		 <tr><td>娑</td> <td>你</td> <td>般</td> <td>帝</td> <td>迦</td></tr>
@@ -2588,7 +2681,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">260</td>
+       <td width="26px"  class="linenumber">260</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>sà</td> <td>pó</td> <td>shí</td> <td>fá</td> <td>là</td></tr>
 		 <tr><td>萨</td> <td>婆</td> <td>什</td> <td>伐</td> <td>啰</td></tr>
@@ -2597,7 +2690,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">261</td>
+       <td width="26px"  class="linenumber">261</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>shì</td> <td>lú</td> <td>jí</td> <td>dì</td></tr>
 		 <tr><td>室</td> <td>嚧</td> <td>吉</td> <td>帝</td></tr>
@@ -2606,7 +2699,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">262</td>
+       <td width="26px"  class="linenumber">262</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>mò</td> <td>tuó</td> <td>pí</td> <td>dá</td> <td>lú</td> <td>zhì</td> <td>jiàn</td></tr>
 		 <tr><td>末</td> <td>陀</td> <td>鞞</td> <td>达</td> <td>嚧</td> <td>制</td> <td>剑</td></tr>
@@ -2615,7 +2708,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">263</td>
+       <td width="26px"  class="linenumber">263</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>ā</td> <td>qǐ</td> <td>lú</td> <td>qián</td></tr>
 		 <tr><td>阿</td> <td>绮</td> <td>嚧</td> <td>钳</td></tr>
@@ -2624,7 +2717,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">264</td>
+       <td width="26px"  class="linenumber">264</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>mù</td> <td>qié</td> <td>lú</td> <td>qián</td></tr>
 		 <tr><td>目</td> <td>佉</td> <td>嚧</td> <td>钳</td></tr>
@@ -2634,7 +2727,7 @@
    </tr>
    
    <tr class="buddyListNormal">
-       <td width="26px">265</td>
+       <td width="26px"  class="linenumber">265</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>jié</td> <td>lì</td> <td>tū</td> <td>lú</td> <td>qián</td></tr>
 		 <tr><td>羯</td> <td>唎</td> <td>突</td> <td>嚧</td> <td>钳</td></tr>
@@ -2643,7 +2736,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">266</td>
+       <td width="26px"  class="linenumber">266</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>jiē</td> <td>là</td> <td>hē</td> <td>．</td> <td>jiē</td> <td>lán</td></tr>
 		 <tr><td>揭</td> <td>啰 </td><td>诃</td> <td>．</td> <td>羯</td> <td>蓝</td></tr>
@@ -2652,7 +2745,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">267</td>
+       <td width="26px"  class="linenumber">267</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>jié</td> <td>ná</td> <td>shū</td> <td>lán</td></tr>
 		 <tr><td>羯</td> <td>拏</td> <td>输</td> <td>蓝</td></tr>
@@ -2661,7 +2754,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">268</td>
+       <td width="26px"  class="linenumber">268</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>dàn</td> <td>duō</td> <td>shū</td> <td>lán</td></tr>
 		 <tr><td>惮</td> <td>多</td> <td>输</td> <td>蓝</td></tr>
@@ -2670,7 +2763,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">269</td>
+       <td width="26px"  class="linenumber">269</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>qì</td> <td>lì</td> <td>yè</td> <td>shū</td> <td>lán</td></tr>
 		 <tr><td>迄</td> <td>唎</td> <td>夜</td> <td>输</td> <td>蓝</td></tr>
@@ -2679,7 +2772,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">270</td>
+       <td width="26px"  class="linenumber">270</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>mò</td> <td>mò</td> <td>shū</td> <td>lán</td></tr>
 		 <tr><td>末</td> <td>么</td> <td>输</td> <td>蓝</td></tr>
@@ -2688,7 +2781,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">271</td>
+       <td width="26px"  class="linenumber">271</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>bá</td> <td>lì</td> <td>shì</td> <td>pó</td> <td>shū</td> <td>lán</td></tr>
 		 <tr><td>跋</td> <td>唎</td> <td>室</td> <td>婆</td> <td>输</td> <td>蓝</td></tr>
@@ -2697,7 +2790,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">272</td>
+       <td width="26px"  class="linenumber">272</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>bì</td> <td>lì</td> <td>sè</td> <td>zhà</td> <td>shū</td> <td>lán</td></tr>
 		 <tr><td>毖</td> <td>栗</td> <td>瑟</td> <td>吒</td> <td>输</td> <td>蓝</td></tr>
@@ -2706,7 +2799,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">273</td>
+       <td width="26px"  class="linenumber">273</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>wū</td> <td>tuó</td> <td>là</td> <td>shū</td> <td>lán</td></tr>
 		 <tr><td>乌</td> <td>陀</td> <td>啰</td> <td>输</td> <td>蓝</td></tr>
@@ -2715,7 +2808,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">274</td>
+       <td width="26px"  class="linenumber">274</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>jié</td> <td>zhī</td> <td>shū</td> <td>lán</td></tr>
 		 <tr><td>羯</td> <td>知</td> <td>输</td> <td>蓝</td></tr>
@@ -2726,7 +2819,7 @@
 
    
    <tr class="buddyListNormal">
-       <td width="26px">275</td>
+       <td width="26px"  class="linenumber">275</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>bá</td> <td>xī</td> <td>dì</td> <td>shū</td> <td>lán</td></tr>
 		 <tr><td>跋</td> <td>悉</td> <td>帝</td> <td>输</td> <td>蓝</td></tr>
@@ -2735,7 +2828,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">276</td>
+       <td width="26px"  class="linenumber">276</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>wū</td> <td>lú</td> <td>shū</td> <td>lán</td></tr>
 		 <tr><td>邬</td> <td>嚧</td> <td>输</td> <td>蓝</td></tr>
@@ -2744,7 +2837,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">277</td>
+       <td width="26px"  class="linenumber">277</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>cháng</td> <td>qié</td> <td>shū</td> <td>lán</td></tr>
 		 <tr><td>常</td> <td>伽</td> <td>输</td> <td>蓝</td></tr>
@@ -2753,7 +2846,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">278</td>
+       <td width="26px"  class="linenumber">278</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>hē</td> <td>xī</td> <td>duō</td> <td>shū</td> <td>lán</td></tr>
 		 <tr><td>喝</td> <td>悉</td> <td>多</td> <td>输</td> <td>蓝</td></tr>
@@ -2762,7 +2855,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">279</td>
+       <td width="26px"  class="linenumber">279</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>bá</td> <td>tuó</td> <td>shū</td> <td>lán</td></tr>
 		 <tr><td>跋</td> <td>陀</td> <td>输</td> <td>蓝</td></tr>
@@ -2771,7 +2864,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">280</td>
+       <td width="26px"  class="linenumber">280</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>suō</td> <td>fáng</td> <td>àng</td> <td>qié</td> <td>．</td> <td>bō</td> <td>là</td> <td>zhàng</td> <td>qié</td> <td>shū</td> <td>lán</td></tr>
 		 <tr><td>娑</td> <td>房</td> <td>盎</td> <td>伽</td> <td>．</td> <td>般</td> <td>啰</td> <td>丈</td> <td>伽</td> <td>输</td> <td>蓝</td></tr>
@@ -2780,7 +2873,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">281</td>
+       <td width="26px"  class="linenumber">281</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>bù</td> <td>duō</td> <td>bì</td> <td>duò</td> <td>chá</td></tr>
 		 <tr><td>部</td> <td>多</td> <td>毖</td> <td>哆</td> <td>茶</td></tr>
@@ -2789,7 +2882,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">282</td>
+       <td width="26px"  class="linenumber">282</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>chá</td> <td>qí</td> <td>ní</td> <td>．</td> <td>shí</td> <td>pó</td> <td>là</td></tr>
 		 <tr><td>茶</td> <td>耆</td> <td>尼</td> <td>．</td> <td>什</td> <td>婆</td> <td>啰</td></tr>
@@ -2798,7 +2891,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">283</td>
+       <td width="26px"  class="linenumber">283</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>tuó</td> <td>tū</td> <td>lú</td> <td>jiā</td> <td>．</td> <td>jiàn</td> <td>duō</td> <td>lú</td> <td>jí</td> <td>zhī</td> <td>．</td> <td>pó</td> <td>lù</td> <td>duō</td> <td>pí</td></tr>
 		 <tr><td>陀</td> <td>突</td> <td>嚧</td> <td>迦</td> <td>．</td> <td>建</td> <td>咄</td> <td>嚧</td> <td>吉</td> <td>知</td> <td>．</td> <td>婆</td> <td>路</td> <td>多</td> <td>毗</td></tr>
@@ -2807,7 +2900,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">284</td>
+       <td width="26px"  class="linenumber">284</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>sà</td> <td>bō</td> <td>lú</td> <td>hē</td> <td>líng</td> <td>qié</td></tr>
 		 <tr><td>萨</td> <td>般</td> <td>嚧</td> <td>诃</td> <td>凌</td> <td>伽</td></tr>
@@ -2817,7 +2910,7 @@
    </tr>
    
    <tr class="buddyListNormal">
-       <td width="26px">285</td>
+       <td width="26px"  class="linenumber">285</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>shū</td> <td>shā</td> <td>dá</td> <td>là</td> <td>suō</td> <td>nuó</td> <td>jié</td> <td>là</td></tr>
 		 <tr><td>输</td> <td>沙</td> <td>怛</td> <td>啰</td> <td>娑</td> <td>那</td> <td>羯</td> <td>啰</td></tr>
@@ -2826,7 +2919,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">286</td>
+       <td width="26px"  class="linenumber">286</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>pí</td> <td>shā</td> <td>yù</td> <td>jiā</td></tr>
 		 <tr><td>毗</td> <td>沙</td> <td>喻</td> <td>迦</td></tr>
@@ -2835,7 +2928,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">287</td>
+       <td width="26px"  class="linenumber">287</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>ā</td> <td>qí</td> <td>ní</td> <td>．</td> <td>wū</td> <td>tuó</td> <td>jiā</td></tr>
 		 <tr><td>阿</td> <td>耆</td> <td>尼</td> <td>．</td> <td>乌</td> <td>陀</td> <td>迦</td></tr>
@@ -2844,7 +2937,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">288</td>
+       <td width="26px"  class="linenumber">288</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>mò</td> <td>là</td> <td>pí</td> <td>là</td> <td>jiàn</td> <td>duò</td> <td>là</td></tr>
 		 <tr><td>末</td> <td>啰</td> <td>鞞</td> <td>啰</td> <td>建</td> <td>跢</td> <td>啰</td></tr>
@@ -2853,7 +2946,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">289</td>
+       <td width="26px"  class="linenumber">289</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>ā <td>jiā</td> <td>là</td> <td>mì</td> <td>lì</td> <td>duō</td> <td>．</td> <td>dá</td> <td>liǎn</td> <td>bù</td> <td>jiā</td></tr>
 		 <tr><td>阿</td> <td>迦</td> <td>啰</td> <td>密</td> <td>唎</td> <td>咄</td> <td>．</td> <td>怛</td> <td>敛</td> <td>部</td> <td>迦</td></tr>
@@ -2862,7 +2955,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">290</td>
+       <td width="26px"  class="linenumber">290</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>dì</td><td>lì</td> <td>là</td> <td>zhà</td></tr>
 		 <tr><td>地</td> <td>栗</td> <td>剌</td> <td>吒</td></tr>
@@ -2871,7 +2964,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">291</td>
+       <td width="26px"  class="linenumber">291</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>bì</td> <td>lì</td> <td>sè</td> <td>zhì</td> <td>jiā</td></tr>
 		 <tr><td>毖</td> <td>唎</td> <td>瑟</td> <td>质</td> <td>迦</td></tr>
@@ -2880,7 +2973,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">292</td>
+       <td width="26px"  class="linenumber">292</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>sà</td> <td>pó</td> <td>nuó</td> <td>jù</td> <td>là</td></tr>
 		 <tr><td>萨</td> <td>婆</td> <td>那</td> <td>俱</td> <td>啰</td></tr>
@@ -2889,7 +2982,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">293</td>
+       <td width="26px"  class="linenumber">293</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>sì</td> <td>yǐn</td> <td>qié</td> <td>bì</td> <td>．</td> <td>jiē</td> <td>là</td> <td>lì</td> <td>yào</td> <td>chā</td> <td>．</td> <td>dá</td> <td>là</td> <td>chú</td></tr>
 		 <tr><td>肆</td> <td>引</td> <td>伽</td> <td>弊</td> <td>．</td> <td>揭</td> <td>啰</td> <td>唎</td> <td>药</td> <td>叉</td> <td>．</td> <td>怛</td> <td>啰</td> <td>芻</td></tr>
@@ -2898,7 +2991,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">294</td>
+       <td width="26px"  class="linenumber">294</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>mò</td> <td>là</td> <td>shì</td> <td>．</td> <td>fèi</td> <td>dì</td> <td>shān</td> <td>．</td> <td>suō</td> <td>pí</td> <td>shān</td></tr>
 		 <tr><td>末</td> <td>啰</td> <td>视</td> <td>．</td> <td>吠</td> <td>帝</td> <td>钐</td> <td>．</td> <td>娑</td> <td>鞞</td> <td>钐</td></tr>
@@ -2909,7 +3002,7 @@
 
    
    <tr class="buddyListNormal">
-       <td width="26px">295</td>
+       <td width="26px"  class="linenumber">295</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>xī</td> <td>dá</td> <td>duō</td> <td>．</td> <td>bō</td> <td>dá</td> <td>là</td></tr>
 		 <tr><td>悉</td> <td>怛</td> <td>多</td> <td>．</td> <td>钵</td> <td>怛</td> <td>啰</td></tr>
@@ -2918,7 +3011,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">296</td>
+       <td width="26px"  class="linenumber">296</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>mó</td> <td>hē</td> <td>bá</td> <td>shé</td> <td>lú</td> <td>sè</td> <td>ní</td> <td>shān</td></tr>
 		 <tr><td>摩</td> <td>诃</td> <td>跋</td> <td>阇</td> <td>嚧</td> <td>瑟</td> <td>尼</td> <td>钐</td></tr>
@@ -2927,7 +3020,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">297</td>
+       <td width="26px"  class="linenumber">297</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>mó</td> <td>hē</td> <td>bō</td> <td>lài</td> <td>zhàng</td> <td>qí</td> <td>lán</td></tr>
 		 <tr><td>摩</td> <td>诃</td> <td>般</td> <td>赖</td> <td>丈</td> <td>耆</td> <td>蓝</td></tr>
@@ -2936,7 +3029,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">298</td>
+       <td width="26px"  class="linenumber">298</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>yè</td> <td>bō</td> <td>tū</td> <td>tuó</td> <td>．</td> <td>shě</td> <td>yù</td> <td>shé</td> <td>nuó</td></tr>
 		 <tr><td>夜</td> <td>波</td> <td>突</td> <td>陀</td> <td>．</td> <td>舍</td> <td>喻</td> <td>阇</td> <td>那</td></tr>
@@ -2945,7 +3038,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">299</td>
+       <td width="26px"  class="linenumber">299</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>biàn</td> <td>dá</td> <td>lì</td> <td>ná</td></tr>
 		 <tr><td>辫</td> <td>怛</td> <td class="xin">口隸</td> <td>拏</td></tr>
@@ -2954,7 +3047,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">300</td>
+       <td width="26px"  class="linenumber">300</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>pí <td>tuó</td> <td>yē</td> <td>．</td> <td>pán</td> <td>tán</td> <td>jiā</td> <td>lú</td> <td>mí</td></tr>
 		 <tr><td>毗</td> <td>陀</td> <td>耶</td> <td>．</td> <td>槃</td> <td>昙</td> <td>迦</td> <td>嚧</td> <td>弥</td></tr>
@@ -2963,7 +3056,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">301</td>
+       <td width="26px"  class="linenumber">301</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>dì</td> <td>shū</td> <td>．</td> <td>pán</td> <td>tán</td> <td>jiā</td> <td>lú</td> <td>mí</td></tr>
 		 <tr><td>帝</td> <td>殊</td> <td>．</td> <td>槃</td> <td>昙</td> <td>迦</td> <td>嚧</td> <td>弥</td></tr>
@@ -2972,7 +3065,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">302</td>
+       <td width="26px"  class="linenumber">302</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>bō</td> <td>là</td> <td>pí</td> <td>tuó</td> <td>．</td> <td>pán</td> <td>tán</td> <td>jiā</td> <td>lú</td> <td>mí</td></tr>
 		 <tr><td>般</td> <td>啰</td> <td>毗</td> <td>陀</td> <td>．</td> <td>槃</td> <td>昙</td> <td>迦</td> <td>嚧</td> <td>弥</td></tr>
@@ -2981,7 +3074,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">303</td>
+       <td width="26px"  class="linenumber">303</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>duò</td> <td>zhí</td> <td>tuō</td></tr>
 		 <tr><td>哆</td> <td>侄</td> <td>他</td></tr>
@@ -2990,7 +3083,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">304</td>
+       <td width="26px"  class="linenumber">304</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>ǎn</td></tr>
 		 <tr><td>唵</td></tr>
@@ -3000,7 +3093,7 @@
    </tr>
    
    <tr class="buddyListNormal">
-       <td width="26px">305</td>
+       <td width="26px"  class="linenumber">305</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>ā</td> <td>nuó</td> <td>lì</td></tr>
 		 <tr><td>阿</td> <td>那</td> <td class="xin">口隸</td></tr>
@@ -3009,7 +3102,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">306</td>
+       <td width="26px"  class="linenumber">306</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>pí</td> <td>shě</td> <td>tí</td></tr>
 		 <tr><td>毗</td> <td>舍</td> <td>提</td></tr>
@@ -3018,7 +3111,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">307</td>
+       <td width="26px"  class="linenumber">307</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>pí</td> <td>là</td> <td>bá</td> <td>shé</td> <td>là</td> <td>tuó</td> <td>lì</td></tr>
 		 <tr><td>鞞</td> <td>啰</td> <td>跋</td> <td>阇</td> <td>啰</td> <td>陀</td> <td>唎</td></tr>
@@ -3027,7 +3120,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">308</td>
+       <td width="26px"  class="linenumber">308</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>pán</td> <td>tuó</td> <td>pán</td> <td>tuó</td> <td>nǐ</td></tr>
 		 <tr><td>槃</td> <td>陀</td> <td>槃</td> <td>陀</td> <td>你</td></tr>
@@ -3036,7 +3129,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">309</td>
+       <td width="26px"  class="linenumber">309</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>bá</td> <td>shé</td> <td>là</td> <td>．</td> <td>bàng</td> <td>ní</td> <td>pàn</td></tr>
 		 <tr><td>跋</td> <td>阇</td> <td>啰</td> <td>．</td> <td>谤</td> <td>尼</td> <td>泮</td></tr>
@@ -3045,7 +3138,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">310</td>
+       <td width="26px"  class="linenumber">310</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>hǔ</td> <td>xīn</td> <td>dū</td> <td>lú</td> <td>yin</td> <td>pàn</td></tr>
 		 <tr><td>虎</td> <td class="xin">合牛</td> <td>都</td> <td>嚧</td> <td>瓮</td> <td>泮</td></tr>
@@ -3054,7 +3147,7 @@
 	   </td>
    </tr>
    <tr class="buddyListNormal">
-       <td width="26px">311</td>
+       <td width="26px"  class="linenumber">311</td>
        <td align="left" valign="middle">
          <table><tr class='zhuyin'><td>suō</td> <td>pó</td> <td>hē</td></tr>
 		 <tr><td>娑</td> <td>婆</td> <td>诃</td></tr>

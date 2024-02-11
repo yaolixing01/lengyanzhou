@@ -1,0 +1,76 @@
+
+
+
+body{
+	background-color:white;
+	color:black;
+	font-size:24px;
+}
+
+.xin{
+	display:inline-display;-moz-transform:scale(1,2);transform:scale(1,2);-webkit-transform:scale(1,2);-o-transform:scale(1,2);font-size:13px;
+}
+
+.buddyListOdd{
+	background-color:#f0f0f0;
+}
+.buddyListEven{
+	background-color:#ffffff;
+}
+.buddyListNormal{
+	background-color:white;
+	color:black;
+}
+.buddyListHighLight{
+	background-color:#DCE2E8;
+}
+
+#headerListTable table{
+	font-family: "Microsoft YaHei", 微软雅黑;
+}
+
+#headerListTable  .content{
+	text-align:center;
+}
+
+.indtro_content
+{
+ 
+text-align:center;
+ 
+}
+
+.indtro_content td
+{
+ 
+}
+ 
+#headerListTable  td {
+
+}
+
+#headerListTable .gap
+{
+	width:50pt;
+}
+
+#buddyListTable table{
+	font-family: "Microsoft YaHei", 微软雅黑;
+	text-align:center;
+}
+
+.zhuyin
+{
+	font-size:24px;
+	font-family: "宋体","Microsoft YaHei", 微软雅黑;
+}
+
+.buddyListNormal .linenumber
+{
+  font-size:10px; 
+}
+
+.linenumber
+{ 
+  color:#ccc;
+}
