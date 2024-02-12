@@ -1,5 +1,16 @@
 
 
+@font-face
+{
+    font-family: myFirstFont;
+    src: url("./msyh.ttf");
+}
+ 
+div
+{
+    font-family:myFirstFont;
+}
+
 
 body{
 	background-color:white;
@@ -26,7 +37,7 @@ body{
 }
 
 #headerListTable table{
-	font-family: "Microsoft YaHei", 微软雅黑;
+	font-family: myFirstFont;
 }
 
 #headerListTable  .content{
@@ -55,14 +66,14 @@ text-align:center;
 }
 
 #buddyListTable table{
-	font-family: "Microsoft YaHei", 微软雅黑;
+	font-family: myFirstFont;
 	text-align:center;
 }
 
 .zhuyin
 {
 	font-size:24px;
-	font-family: "宋体","Microsoft YaHei", 微软雅黑;
+	font-family: myFirstFont;
 }
 
 .buddyListNormal .linenumber
